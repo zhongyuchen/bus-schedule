@@ -6,10 +6,79 @@ Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
+    multiArray: [['工作日', '非工作日'], ['邯郸', '江湾', '枫林', '张江', '上科大'], ['江湾', '枫林', '张江']],
+    multiIndex: [0, 0, 0],
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
+  bindMultiPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      multiIndex: e.detail.value
+    })
+  },
+  bindMultiPickerColumnChange: function (e) {
+    console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
+    var data = {
+      multiArray: this.data.multiArray,
+      multiIndex: this.data.multiIndex
+    };
+    data.multiIndex[e.detail.column] = e.detail.value;
+    switch (e.detail.column) {
+      case 0:
+        data.multiArray[1] = ['邯郸', '江湾', '枫林', '张江', '上科大'];
+        data.multiArray[2] = ['江湾', '枫林', '张江'];
+        data.multiIndex[1] = 0;
+        data.multiIndex[2] = 0;
+        break;
+      case 1:
+        switch (data.multiIndex[0]) {
+          case 0:
+            switch (data.multiIndex[1]) {
+              case 0:
+                data.multiArray[2] = ['江湾', '枫林', '张江'];
+                break;
+              case 1:
+                data.multiArray[2] = ['邯郸'];
+                break;
+              case 2:
+                data.multiArray[2] = ['邯郸', '张江'];
+                break;
+              case 3:
+                data.multiArray[2] = ['邯郸', '枫林'];
+                break;
+              case 4:
+                data.multiArray[2] = ['张江'];
+                break;
+            }
+            break;
+          case 1:
+            switch (data.multiIndex[1]) {
+              case 0:
+                data.multiArray[2] = ['江湾', '枫林', '张江'];
+                break;
+              case 1:
+                data.multiArray[2] = ['邯郸'];
+                break;
+              case 2:
+                data.multiArray[2] = ['邯郸'];
+                break;
+              case 3:
+                data.multiArray[2] = ['邯郸'];
+                break;
+              case 4:
+                data.multiArray[2] = ['张江'];
+                break;
+            }
+            break;
+        }
+        data.multiIndex[2] = 0;
+        console.log(data.multiIndex);
+        break;
+    }
+    this.setData(data);
+  },
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'

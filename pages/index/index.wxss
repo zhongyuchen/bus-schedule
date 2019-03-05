@@ -1,7 +1,9 @@
 /**index.wxss**/
+@import "../../lib/weui.wxss";
+
 .userinfo {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -18,4 +20,9 @@
 
 .usermotto {
   margin-top: 200px;
+}
+
+.picker{
+    padding: 13px;
+    background-color: #FFFFFF;
 }
