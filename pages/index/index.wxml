@@ -15,18 +15,18 @@
 <view class="section">
   <view class="table">
     <view class="tr">
-      <view class="th">left</view>
-      <view class="th">right</view>
+      <view class="th">{{currentLoca["left"]}}</view>
+      <view class="th">{{currentLoca["right"]}}</view>
     </view>
-    <view class="tr">
-      <view class="td">100</view>
-      <view class="td">100</view>
+    <view class="tr" wx:key="property" wx:for="{{timeList}}" wx:for-index="idx" wx:for-item="timeRow">
+      <view class="td">{{timeRow["left"]}}</view>
+      <view class="td">{{timeRow["right"]}}</view>
     </view>
   </view>
 </view>
 
 <!-- footer -->
-  <view class="weui-footer weui-footer_fixed-bottom">
+  <view class="weui-footer weui-footer">
     <view class="weui-footer__links">
       <view class="weui-footer__link">更新于2019年2月20日</view>
     </view>
