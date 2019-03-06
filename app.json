@@ -5,8 +5,8 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor": "#b3e2cd",
+    "navigationBarTitleText": "复旦大学校车时刻表",
     "navigationBarTextStyle":"black"
   }
 }

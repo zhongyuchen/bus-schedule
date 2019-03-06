@@ -26,3 +26,29 @@
     padding: 13px;
     background-color: #FFFFFF;
 }
+
+.table{
+  border:2px solid #fdcdac;
+  width:93%;
+  align-content: center;
+  vertical-align: center;
+  margin-left: 3%;
+}
+
+.tr{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.th{
+  font-weight: 900;
+  background: #F8F8F8;
+  font-size: 17px;
+}
+
+.th, .td{
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}

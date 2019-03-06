@@ -1,8 +1,35 @@
 <!--index.wxml-->
-<view class="container">
+<view class="page">
+
+<!-- picker -->
+  <view class="section">
   <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
     <view class="picker">
-      {{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+      <button class="weui-btn" type="primary" plain="true">
+      {{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}</button>
     </view>
   </picker>
+</view>
+
+<!-- table -->
+<view class="section">
+  <view class="table">
+    <view class="tr">
+      <view class="th">left</view>
+      <view class="th">right</view>
+    </view>
+    <view class="tr">
+      <view class="td">100</view>
+      <view class="td">100</view>
+    </view>
+  </view>
+</view>
+
+<!-- footer -->
+  <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__links">
+      <view class="weui-footer__link">更新于2019年2月20日</view>
+    </view>
+    <view class="weui-footer__text">Made by Zhongyu Chen</view>
+        </view>
 </view>

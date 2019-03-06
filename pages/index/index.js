@@ -24,6 +24,20 @@ Page({
       multiArray: this.data.multiArray,
       multiIndex: this.data.multiIndex
     };
+    nameId = {
+      "邯郸": 0,
+      "江湾": 1,
+      "枫林": 2,
+      "张江": 3,
+      "上科大": 4
+    }
+    namePlace = {
+      "邯郸": "h",
+      "江湾": "j",
+      "枫林": "f",
+      "张江": "z",
+      "上科大": "s"
+    }
     data.multiIndex[e.detail.column] = e.detail.value;
     switch (e.detail.column) {
       case 0:
@@ -78,6 +92,15 @@ Page({
         break;
     }
     this.setData(data);
+
+    // table data
+    timetable = {
+      "left": namePlace[data.multiArray[1][data.multiIndex[1]]],
+      "right": namePlace[data.multiArray[2][data.multiIndex[2]]],
+      "leftTime": [],
+      "rightTime": []
+    };
+    this.setData(timetable);
   },
   bindViewTap: function() {
     wx.navigateTo({
