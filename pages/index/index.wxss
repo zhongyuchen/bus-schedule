@@ -28,11 +28,13 @@
 }
 
 .table{
-  border:2px solid #fdcdac;
+  border:1px solid #fb9a99;
+  border-radius: 7px;
   width:93%;
   align-content: center;
   vertical-align: center;
   margin-left: 3%;
+  margin-bottom: 30px;
 }
 
 .tr{
@@ -42,24 +44,29 @@
 }
 
 .th{
-  font-weight: 900;
-  background: #F8F8F8;
+  font-weight: 600;
+  background: #FFFFFF;
   font-size: 17px;
 }
 
 .td1{
-  background: #F8F8F8;
+  background: #FFFFFF;
 }
 
 .td2{
-  background: #FFFFFF;
+  background: #F8F8F8;
+}
+
+.td-button{
+  width: 100%;
+  text-align: center;
 }
 
 .td1, .td2{
   font-size: 15px;
 }
 
-.th, .td{
+.th, .td1, .td2{
   padding: 10px;
   width: 100%;
   text-align: center;
