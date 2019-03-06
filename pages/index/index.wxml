@@ -19,8 +19,14 @@
       <view class="th">{{currentLoca["right"]}}</view>
     </view>
     <view class="tr" wx:key="property" wx:for="{{timeList}}" wx:for-index="idx" wx:for-item="timeRow">
-      <view class="td">{{timeRow["left"]}}</view>
-      <view class="td">{{timeRow["right"]}}</view>
+      <block wx:if="{{idx%2}}">
+        <view class="td1">{{timeRow["left"]}}</view>
+        <view class="td1">{{timeRow["right"]}}</view>
+      </block>
+      <block wx:else>
+        <view class="td2">{{timeRow["left"]}}</view>
+        <view class="td2">{{timeRow["right"]}}</view>
+      </block>
     </view>
   </view>
 </view>

@@ -47,6 +47,18 @@
   font-size: 17px;
 }
 
+.td1{
+  background: #F8F8F8;
+}
+
+.td2{
+  background: #FFFFFF;
+}
+
+.td1, .td2{
+  font-size: 15px;
+}
+
 .th, .td{
   padding: 10px;
   width: 100%;
