@@ -1711,11 +1711,11 @@ Page({
     }
 
     // table data
-    data.timeList = data.timeTable[pyName[data.multiArray[0][data.multiIndex[0]]]][pyName[data.multiArray[1][data.multiIndex[1]]]][pyName[data.multiArray[2][data.multiIndex[2]]]]
+    data.timeList = data.timeTable[pyName[data.multiArray[0][data.multiIndex[0]]]][pyName[data.multiArray[1][data.multiIndex[1]]]][pyName[data.multiArray[2][data.multiIndex[2]]]];
     data.currentLoca = {
       "left": data.location[data.multiArray[1][data.multiIndex[1]]],
       "right": data.location[data.multiArray[2][data.multiIndex[2]]]
-    }
+    };
     this.setData(data);
   },
   // bindViewTap: function() {
