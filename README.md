@@ -7,11 +7,11 @@
 Bus schedule of Fudan University hosted on __WeChat Mini Program__ 
 with a picker for choosing date, starting point and destination.
 
-![screen shot](data/screenshot.jpg)
-
-## ER Code
-
 ![ercode](data/ercode.png)
+
+## Screen Shot
+
+![screen shot](data/screenshot.jpg)
 
 ## Features
 
