@@ -1,9 +1,17 @@
 # busschedule-wx
 
-![build status](https://img.shields.io/badge/build-passing-green.svg)
+![build status](https://img.shields.io/badge/build-passing-66c2a5.svg)
+![version](https://img.shields.io/badge/version-1.0.0-fc8d62.svg)
+[![Apache License](https://img.shields.io/badge/license-Apache2.0-8da0cb.svg)](http://www.apache.org/licenses/)
 
 Bus schedule of Fudan University hosted on __WeChat Mini Program__ 
 with a picker for choosing date, starting point and destination.
+
+![index0](data/index0.png)
+
+## ER Code
+
+![ercode](data/ercode.png)
 
 ## Features
 
@@ -12,6 +20,16 @@ with a picker for choosing date, starting point and destination.
 * The exact location of starting point and destination are shown at the table header
 * Starting point in picker, exact starting location and departure time at starting point are all on the left
 * Destination in picker, exact destination location and departure time at destination are all on the right
+
+## Screen Shots
+
+* Index
+
+![index1](data/index1.png)
+
+* Picker
+
+![picker](data/picker.png)
 
 ## Reference
 
