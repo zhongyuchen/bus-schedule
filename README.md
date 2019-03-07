@@ -28,6 +28,7 @@ with a picker for choosing date, starting point and destination.
 
 ## Links
 
+* [微信公众平台](https://mp.weixin.qq.com/)
 * [Official notice on bus schedule of Fudan University](http://www.xyfw.fudan.edu.cn/p2049c1954/list.htm)
 * [Map of Fudan University](http://map.fudan.edu.cn)
 
