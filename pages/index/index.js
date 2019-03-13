@@ -1617,11 +1617,26 @@ Page({
       }
     ],
     location: {
-      "邯郸": "理科图书馆东侧",
-      "江湾": "校区宣传栏",
-      "枫林": "西苑（近8号楼）",
-      "张江": "II期1号门卫室东侧", 
-      "上科大": "学生宿舍区内"
+      "邯郸": {
+        "江湾": "理科图书馆东侧",
+        "枫林": "老化学楼东侧",
+        "张江": "理科图书馆东侧"
+      },
+      "江湾": {
+        "邯郸": "校区宣传栏"
+        },
+      "枫林": {
+        "邯郸": "西苑（近8号楼）",
+        "张江": "西苑（近8号楼）",
+      },
+      "张江": {
+        "枫林": "II期1号门卫室东侧",
+        "邯郸": "I期图书馆西侧",
+        "上科大": "I期图书馆西侧"
+      },
+      "上科大": {
+        "张江": "学生宿舍区内"
+      }
     }, 
     currentLoca: {
       "left": "理科图书馆东侧",
@@ -1713,8 +1728,8 @@ Page({
     // table data
     data.timeList = data.timeTable[pyName[data.multiArray[0][data.multiIndex[0]]]][pyName[data.multiArray[1][data.multiIndex[1]]]][pyName[data.multiArray[2][data.multiIndex[2]]]];
     data.currentLoca = {
-      "left": data.location[data.multiArray[1][data.multiIndex[1]]],
-      "right": data.location[data.multiArray[2][data.multiIndex[2]]]
+      "left": data.location[data.multiArray[1][data.multiIndex[1]]][data.multiArray[2][data.multiIndex[2]]],
+      "right": data.location[data.multiArray[2][data.multiIndex[2]]][data.multiArray[1][data.multiIndex[1]]]
     };
     this.setData(data);
   },

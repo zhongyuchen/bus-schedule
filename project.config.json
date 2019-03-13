@@ -21,7 +21,19 @@
 			{
 				"type": "folder",
 				"value": ".idea"
-			}
+			},
+      {
+        "type": "file",
+        "value": ".gitignore"
+      },
+      {
+        "type": "file",
+        "value": "LICENSE"
+      },
+      {
+        "type": "file",
+        "value": "README.md"
+      }
 		]
 	},
 	"condition": {
