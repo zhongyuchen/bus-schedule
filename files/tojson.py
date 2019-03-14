@@ -3,7 +3,7 @@ import json
 import copy
 
 INPUT_CSV = "buses(2018-4-10).csv"
-OUTPUT_JSON = "buses(2018-4-10).json"
+OUTPUT_JSON = "timetable.json"
 
 
 def timeList(dic, week, fro, to):
@@ -118,7 +118,8 @@ def tojson(filename):
 
 
 if __name__ == "__main__":
-    dic = tojson(INPUT_CSV)
+    # timetable
+    timeTable = tojson(INPUT_CSV)
 
     with open(OUTPUT_JSON, "w") as file:
-        json.dump(dic, file, indent=4)
+        json.dump(timeTable, file, indent=4)

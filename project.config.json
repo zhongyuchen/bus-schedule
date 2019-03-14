@@ -16,7 +16,7 @@
 		"ignore": [
 			{
 				"type": "folder",
-				"value": "data"
+				"value": "files"
 			},
 			{
 				"type": "folder",
