@@ -1302,7 +1302,8 @@ var timetable = {
                     "left": "17:30 (1)",
                     "right": ""
                 }
-            ]
+            ],
+            "zhangjiang": []
         },
         "zhangjiang": {
             "handan": [
@@ -1323,6 +1324,7 @@ var timetable = {
                     "right": ""
                 }
             ],
+            "fenglin": [],
             "stu": [
                 {
                     "left": "",

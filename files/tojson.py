@@ -53,61 +53,48 @@ def timeList(dic, week, fro, to):
 
 def tojson(filename):
     # load csv file, parse and preprocess data
-    dic = {
-        "weekday": {
-            "handan": {
-                "jiangwan": [],
-                "fenglin": [],
-                "zhangjiang": []
-            },
-            "jiangwan": {
-                "handan": [],
-            },
-            "fenglin": {
-                "handan": [],
-                "zhangjiang": []
-            },
-            "zhangjiang": {
-                "handan": [],
-                "fenglin": [],
-                "stu": []
-            },
-            "stu": {
-                "zhangjiang": []
-            }
+
+    # routes
+    routes = {
+        "handan": {
+            "jiangwan": [],
+            "fenglin": [],
+            "zhangjiang": []
         },
-        "weekend": {
-            "handan": {
-                "jiangwan": [],
-                "fenglin": [],
-                "zhangjiang": []
-            },
-            "jiangwan": {
-                "handan": [],
-            },
-            "fenglin": {
-                "handan": []
-            },
-            "zhangjiang": {
-                "handan": [],
-                "stu": []
-            },
-            "stu": {
-                "zhangjiang": []
-            }
+        "jiangwan": {
+            "handan": [],
+        },
+        "fenglin": {
+            "handan": [],
+            "zhangjiang": []
+        },
+        "zhangjiang": {
+            "handan": [],
+            "fenglin": [],
+            "stu": []
+        },
+        "stu": {
+            "zhangjiang": []
         }
     }
 
+    # empty dic
+    dic = {
+        "weekday": copy.deepcopy(routes),
+        "weekend": copy.deepcopy(routes)
+    }
+
+    # another empty dic
     data = copy.deepcopy(dic)
 
-    # load csv
+    # load csv and get dic
     with open(filename, newline='') as file:
         # parse data
         reader = csv.DictReader(file)
         for row in reader:
             dic[row["week"]][row["from"]][row["to"]].append("%s (%s)" % (row["time"], row["amount"]))
 
-    # transform
+    # transform dic -> data
     for week in data:
         for fro in data[week]:
             for to in data[week][fro]:

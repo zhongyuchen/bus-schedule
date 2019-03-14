@@ -1,6 +1,19 @@
 <!--index.wxml-->
 <view class="page">
 
+<view class="section">
+<!-- 需要使用 button 来授权登录 -->
+<button
+  wx:if="{{canIUse}}"
+  open-type="getUserInfo"
+  bindgetuserinfo="bindGetUserInfo"
+  class="weui-btn" type="primary" plain="true"
+>
+  授权登录
+</button>
+<view wx:else>请升级微信版本</view>
+</view>
+
 <!-- picker -->
   <view class="section">
   <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
