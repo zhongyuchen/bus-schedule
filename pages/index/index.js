@@ -10,18 +10,28 @@ var pyName = require("../../data/pyname.js").data;
 //build the page
 Page({
   data: {
-    userInfo: {},
+    // userinfo
+    userInfo: {
+      nickName: "未登录",
+      avatarUrl: "https://raw.githubusercontent.com/czhongyu/busschedule-wx/master/files/xiaohui.jpg"
+    },
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    route: "？/？",
+    // picker
     multiArray: [['工作日', '非工作日'], ['邯郸', '江湾', '枫林', '张江', '上科大'], ['江湾', '枫林', '张江']],
     multiIndex: [0, 0, 0],
+    // timetable
     timeList: timeTable["weekday"]["handan"]["jiangwan"],
     currentLoca: {
       "left": location["邯郸"]["江湾"],
       "right": location["江湾"]["邯郸"]
-    },
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    }
   },
   //事件处理函数
+  bindGetUserInfo(e) {
+    console.log(e.detail.userInfo)
+  },
   bindMultiPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({

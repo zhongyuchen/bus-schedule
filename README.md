@@ -41,3 +41,8 @@ with a picker for choosing date, starting point and destination.
 ## Author
 
 Zhongyu Chen
+
+
+1. 用户拒绝授权的处理
+3. 登陆成功showModal
+4. 设置路线成功showModal

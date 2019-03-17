@@ -7,6 +7,12 @@
   align-items: center;
 }
 
+.name-route {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
@@ -15,11 +21,18 @@
 }
 
 .userinfo-nickname {
-  color: #aaa;
+  font-weight: 600;
+  font-size: 20px;
 }
 
-.usermotto {
-  margin-top: 200px;
+.route{
+  font-size: 16px;
+}
+
+.button-view{
+  display: flex;
+  align-items: center;
+  margin-right: 3%;
 }
 
 .picker{
@@ -35,6 +48,17 @@
   vertical-align: center;
   margin-left: 3%;
   margin-bottom: 30px;
+}
+
+.avatar-bg{
+  background-color: #b3e2cd;
+}
+
+.avatar{
+  display: flex;
+  width:93%;
+  justify-content: space-between;
+  margin-left: 3%;
 }
 
 .tr{
@@ -54,7 +78,7 @@
 }
 
 .td2{
-  background: #F8F8F8;
+  background: #F5F5F5;
 }
 
 .td-button{

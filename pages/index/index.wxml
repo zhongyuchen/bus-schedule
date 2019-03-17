@@ -2,16 +2,21 @@
 <view class="page">
 
 <view class="section">
-<!-- 需要使用 button 来授权登录 -->
-<button
-  wx:if="{{canIUse}}"
-  open-type="getUserInfo"
-  bindgetuserinfo="bindGetUserInfo"
-  class="weui-btn" type="primary" plain="true"
->
-  授权登录
-</button>
-<view wx:else>请升级微信版本</view>
+  <view class="avatar-bg">
+  <view class="avatar">
+  <view class="userinfo">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <view class="name-route">
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="route">{{route}}</text>
+    </view>
+  </view>
+  <view class="button-view">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="weui-btn mini-btn" type="primary" size="mini">授权登陆</button>
+      <button wx:else class="weui-btn mini-btn" type="primary" size="mini">设为常用</button>
+      </view>
+  </view>
+  </view>
 </view>
 
 <!-- picker -->
@@ -57,6 +62,6 @@
     <view class="weui-footer__links">
       <view class="weui-footer__link">更新于2019年2月20日</view>
     </view>
-    <view class="weui-footer__text">Made by Zhongyu Chen</view>
+    <view class="weui-footer__text">非官方复旦大学校车时刻表v1.0.1</view>
         </view>
 </view>

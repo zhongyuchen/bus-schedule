@@ -4,7 +4,7 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#b3e2cd",
+    "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTitleText": "复旦大学校车时刻表",
     "navigationBarTextStyle":"black"
   }

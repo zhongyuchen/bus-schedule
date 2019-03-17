@@ -12,6 +12,7 @@
 	"appid": "wx0cf1b691aa8cee83",
 	"projectname": "busschedule-wx",
 	"isGameTourist": false,
+  "cloudfunctionRoot": "./cloud-functions",
 	"packOptions": {
 		"ignore": [
 			{
