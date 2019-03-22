@@ -119,6 +119,12 @@ Page({
   //   })
   // },
   onLoad: function () {
+    wx.showToast({
+      title: 'loading',
+      icon: 'loading',
+      duration: 8000
+    })
+
     // login
     if (app.globalData.userInfo) {
       this.setData({
@@ -196,6 +202,8 @@ Page({
       }
 
     })
+
+    wx.hideToast()
   },
   // getUserInfo: function(e) {
   //   console.log(e)
