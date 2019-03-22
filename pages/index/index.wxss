@@ -13,12 +13,16 @@
   margin-left: 5px;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
+.userinfo-avatar {  
+  overflow:hidden;  
+  display: block;  
+  width: 128rpx;  
+  height: 128rpx;  
+  margin: 20rpx;  
+  border-radius: 50%;  
+  border: 2px solid #fff;  
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+}  
 
 .userinfo-nickname {
   font-weight: 600;

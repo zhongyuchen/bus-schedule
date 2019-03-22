@@ -21,14 +21,17 @@ with a picker for choosing date, starting point and destination.
 * Starting point in picker, exact starting location and departure time at starting point are all on the left
 * Destination in picker, exact destination location and departure time at destination are all on the right
 
-### Coming Soon
+## Prerequisites
 
-* 最好能加个定位功能，知道在哪个校区，默认提供本校区前往其他校区的下一班（或三班）车的时间
-* 如果可以设置一个闹钟提醒功能就更好
-* 能不能每个人有一个默认的两个校区设置，大部分人只在两个校区里穿梭，每次都要选的话其实也很麻烦。
+* Since `wx-server-sdk` is used for cloud functions, 
+`wx-server-sdk` dependencies have to be installed at the root of each cloud function via the following command:
+```commandline
+npm install --save wx-server-sdk@latest
+```
 
 ## Reference
 
+* [miniprogram-demo](https://github.com/wechat-miniprogram/miniprogram-demo)
 * [picker](https://developers.weixin.qq.com/miniprogram/dev/component/picker.html)
 * [WeUI](https://github.com/Tencent/weui)
 
@@ -41,8 +44,3 @@ with a picker for choosing date, starting point and destination.
 ## Author
 
 Zhongyu Chen
-
-
-1. 用户拒绝授权的处理
-3. 登陆成功showModal
-4. 设置路线成功showModal

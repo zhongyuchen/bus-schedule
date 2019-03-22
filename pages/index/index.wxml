@@ -5,15 +5,21 @@
   <view class="avatar-bg">
   <view class="avatar">
   <view class="userinfo">
-    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <view class="userinfo-avatar">
+    <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <!-- <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image> -->
     <view class="name-route">
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      <text class="route">{{route}}</text>
+      <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+      <view class="userinfo-nickname"><open-data type="userNickName"></open-data></view>
+      <text class="route">{{departure}}/{{week}}/{{destination}}</text>
     </view>
   </view>
   <view class="button-view">
-      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="weui-btn mini-btn" type="primary" size="mini">授权登陆</button>
-      <button wx:else class="weui-btn mini-btn" type="primary" size="mini">设为常用</button>
+      <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="weui-btn mini-btn" type="primary" size="mini">授权登陆</button>
+      <button wx:else class="weui-btn mini-btn" type="primary" size="mini" bindtap="store_route">设为常用</button> -->
+      <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="store_route">设为常用</button>
+      
       </view>
   </view>
   </view>
@@ -25,11 +31,11 @@
     <view class="picker">
       <button class="weui-btn" type="primary" plain="true">
       <view class="tr">
-        <view class="td-button">{{multiArray[1][multiIndex[1]]}}</view>
+        <view class="td-button">{{pickerDepart}}</view>
         <text class='dialog-close' decode='true'>&lt;</text>
-        <view class="td-button">{{multiArray[0][multiIndex[0]]}}</view>
+        <view class="td-button">{{pickerWeek}}</view>
         <text class='dialog-close' decode='true'>&gt;</text>
-        <view class="td-button">{{multiArray[2][multiIndex[2]]}}</view>
+        <view class="td-button">{{pickerDestin}}</view>
       </view>
 
       </button>
@@ -62,6 +68,6 @@
     <view class="weui-footer__links">
       <view class="weui-footer__link">更新于2019年2月20日</view>
     </view>
-    <view class="weui-footer__text">非官方复旦大学校车时刻表v1.0.1</view>
+    <view class="weui-footer__text">非官方复旦大学校车时刻表v1.1.0</view>
         </view>
 </view>

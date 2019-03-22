@@ -5,14 +5,17 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"uglifyFileName": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
+	"libVersion": "2.6.2",
 	"appid": "wx0cf1b691aa8cee83",
 	"projectname": "busschedule-wx",
 	"isGameTourist": false,
-  "cloudfunctionRoot": "./cloud-functions",
+	"cloudfunctionRoot": "cloud-functions/",
 	"packOptions": {
 		"ignore": [
 			{
@@ -23,18 +26,18 @@
 				"type": "folder",
 				"value": ".idea"
 			},
-      {
-        "type": "file",
-        "value": ".gitignore"
-      },
-      {
-        "type": "file",
-        "value": "LICENSE"
-      },
-      {
-        "type": "file",
-        "value": "README.md"
-      }
+			{
+				"type": "file",
+				"value": ".gitignore"
+			},
+			{
+				"type": "file",
+				"value": "LICENSE"
+			},
+			{
+				"type": "file",
+				"value": "README.md"
+			}
 		]
 	},
 	"condition": {

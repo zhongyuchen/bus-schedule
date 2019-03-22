@@ -7,6 +7,9 @@ var timeTable = require("../../data/timetable.js").data;
 var location = require("../../data/location.js").data;
 var pyName = require("../../data/pyname.js").data;
 
+//util
+var util = require("../../utils/util.js");
+
 //build the page
 Page({
   data: {
@@ -17,7 +20,13 @@ Page({
     },
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    route: "？/？",
+    // user route
+    departure: "？",
+    destination: "？",
+    pickerDepart: "邯郸",
+    pickerDestin: "江湾",
+    week: "？",
+    pickerWeek: "工作日",
     // picker
     multiArray: [['工作日', '非工作日'], ['邯郸', '江湾', '枫林', '张江', '上科大'], ['江湾', '枫林', '张江']],
     multiIndex: [0, 0, 0],
@@ -29,23 +38,47 @@ Page({
     }
   },
   //事件处理函数
-  bindGetUserInfo(e) {
-    console.log(e.detail.userInfo)
-  },
+  // bindGetUserInfo(e) {
+  //   console.log(e.detail.userInfo)
+  // },
   bindMultiPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      multiIndex: e.detail.value
-    })
-  },
-  bindMultiPickerColumnChange: function (e) {
-    console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
-    // data dic for update
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
+
     var data = {
       multiArray: this.data.multiArray,
       multiIndex: this.data.multiIndex,
+
       timeList: this.data.timeList,
-      currentLoca: this.data.currentLoca
+      currentLoca: this.data.currentLoca,
+      pickerDepart: this.data.pickerDepart,
+      pickerDestin: this.data.pickerDestin,
+      pickerWeek: this.data.pickerWeek
+    };
+
+    // update picker display
+    data.pickerWeek = data.multiArray[0][data.multiIndex[0]];
+    data.pickerDepart = data.multiArray[1][data.multiIndex[1]];
+    data.pickerDestin = data.multiArray[2][data.multiIndex[2]];
+
+    // update timelist
+    data.timeList = timeTable[pyName[data.multiArray[0][data.multiIndex[0]]]][pyName[data.multiArray[1][data.multiIndex[1]]]][pyName[data.multiArray[2][data.multiIndex[2]]]];
+
+    // update currentLoca
+    data.currentLoca = {
+      "left": location[data.multiArray[1][data.multiIndex[1]]][data.multiArray[2][data.multiIndex[2]]],
+      "right": location[data.multiArray[2][data.multiIndex[2]]][data.multiArray[1][data.multiIndex[1]]]
+    };
+
+    data.multiIndex = e.detail.value;
+
+    this.setData(data);
+  },
+  bindMultiPickerColumnChange: function (e) {
+    // console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
+    // data dic for update
+    var data = {
+      multiArray: this.data.multiArray,
+      multiIndex: this.data.multiIndex
     };
 
     // update multiIndex
@@ -74,18 +107,8 @@ Page({
             break;
         }
         data.multiIndex[2] = 0;
-        console.log(data.multiIndex);
         break;
     }
-
-    // update timelist
-    data.timeList = timeTable[pyName[data.multiArray[0][data.multiIndex[0]]]][pyName[data.multiArray[1][data.multiIndex[1]]]][pyName[data.multiArray[2][data.multiIndex[2]]]];
-
-    // update currentLoca
-    data.currentLoca = {
-      "left": location[data.multiArray[1][data.multiIndex[1]]][data.multiArray[2][data.multiIndex[2]]],
-      "right": location[data.multiArray[2][data.multiIndex[2]]][data.multiArray[1][data.multiIndex[1]]]
-    };
 
     // update data
     this.setData(data);
@@ -96,16 +119,7 @@ Page({
   //   })
   // },
   onLoad: function () {
-    // wx.showModal({
-    //   title: '提示',
-    //   content: '这是一个模态弹窗',
-    //   success: function (res) {
-    //     if (res.confirm) {
-    //       console.log('用户点击确定')
-    //     }
-    //   }
-    // })
-
+    // login
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -132,13 +146,104 @@ Page({
         }
       })
     }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+
+    // basic update
+    let week = util.getDayofweek();
+    let pickerWeek;
+    if (week == "周六" || week == "周日") {
+      pickerWeek = "非工作日";
+    } else {
+      pickerWeek = "工作日";
+    }
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      week: week,
+      pickerWeek: pickerWeek,
+      timeList: timeTable[pyName[pickerWeek]][pyName[this.data.pickerDepart]][pyName[this.data.pickerDestin]]
     })
+
+    // load user route
+    wx.cloud.init()
+    wx.cloud.callFunction({
+      name: 'get_route'
+    }).then(res => {
+      // console.log(res)
+      if (res.result.data[0]) {
+        // user route available
+        // load user timetable
+        var data = {
+          week: this.data.week,
+          departure: res.result.data[0].departure,
+          destination: res.result.data[0].destination,
+
+          pickerWeek: this.data.pickerWeek,
+          pickerDepart: res.result.data[0].departure,
+          pickerDestin: res.result.data[0].destination,
+
+          timeList: [],
+          currentLoca: {}
+        };
+
+        // update timelist
+        data.timeList = timeTable[pyName[data.pickerWeek]][pyName[data.pickerDepart]][pyName[data.pickerDestin]];
+
+        // update currentLoca
+        data.currentLoca = {
+          "left": location[data.departure][data.destination],
+          "right": location[data.destination][data.departure]
+        };
+
+        this.setData(data);
+      }
+
+    })
+  },
+  // getUserInfo: function(e) {
+  //   console.log(e)
+  //   if (e.detail.userInfo) {
+  //     app.globalData.userInfo = e.detail.userInfo
+  //     this.setData({
+  //       userInfo: e.detail.userInfo,
+  //       hasUserInfo: true
+  //     })
+  //   }
+  // },
+  store_route: function(e){
+    let newDepart = this.data.multiArray[1][this.data.multiIndex[1]]
+    let newDestin = this.data.multiArray[2][this.data.multiIndex[2]]
+
+    var myThis = this;
+
+    wx.showModal({
+      title: '提示',
+      content: '设置常用路线为：' + newDepart + "/" + newDestin + "?",
+      success(res) {
+        if (res.confirm) {
+          // set route
+          wx.cloud.init()
+          wx.cloud.callFunction({
+            name: 'store_route',
+            data: {
+              departure: newDepart,
+              destination: newDestin
+            }
+          }).then(res => {
+            // result
+          })
+
+          myThis.setData({
+            departure: newDepart,
+            destination: newDestin
+          })
+
+          wx.showToast({
+            title: '设置成功',
+            icon: 'success',
+            duration: 2000
+          })
+        }
+      }
+    })
+
+    this.setData(myThis);
   }
 })
