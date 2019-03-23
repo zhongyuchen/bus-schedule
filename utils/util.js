@@ -1,9 +1,14 @@
 const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
+  // const year = date.getFullYear()
+  // const month = date.getMonth() + 1
+  // const day = date.getDate()
 
-  return [year, month, day].map(formatNumber).join('/')
+  var hour = date.getHours()
+  var minute = date.getMinutes()
+  // var second = date.getSeconds()
+
+  // return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+  return [hour, minute].map(formatNumber).join(':')
 }
 
 const formatNumber = n => {
@@ -19,7 +24,43 @@ function getDayofweek() {
   return week;
 }
 
+function compare(s1, s2) {
+  for (let i = 0; i < 5; i++) {
+    if (s1[i] > s2[i]){
+      return 1
+    }
+  }
+
+  return 0
+}
+
+function update_next(timeList) {
+  let time = formatTime(new Date());
+  let departTime = "无";
+  let destinTime = "无";
+
+  for (let i = 0; i < timeList.length; i++) {
+    if (timeList[i]["left"] != "" && compare(timeList[i]["left"], time)) {
+      departTime = timeList[i]["left"];
+      break;
+    }
+  }
+  for (let i = 0; i < timeList.length; i++) {
+    if (timeList[i]["right"] != "" && compare(timeList[i]["right"], time)) {
+      destinTime = timeList[i]["right"];
+      break;
+    }
+  }
+
+  return {
+    departTime: departTime,
+    destinTime: destinTime
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
-  getDayofweek: getDayofweek
+  getDayofweek: getDayofweek,
+  compare: compare,
+  update_next: update_next
 }

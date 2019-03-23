@@ -50,24 +50,21 @@
       <view class="th">{{currentLoca["left"]}}</view>
       <view class="th">{{currentLoca["right"]}}</view>
     </view>
+    <view class="tr">
+      <view class="td">下一班次{{departTime}}</view>
+      <view class="td">下一班次{{destinTime}}</view>
+    </view>
     <view class="tr" wx:key="property" wx:for="{{timeList}}" wx:for-index="idx" wx:for-item="timeRow">
       <block wx:if="{{idx%2}}">
-        <view class="td1">{{timeRow["left"]}}</view>
-        <view class="td1">{{timeRow["right"]}}</view>
-      </block>
-      <block wx:else>
         <view class="td2">{{timeRow["left"]}}</view>
         <view class="td2">{{timeRow["right"]}}</view>
+      </block>
+      <block wx:else>
+        <view class="td1">{{timeRow["left"]}}</view>
+        <view class="td1">{{timeRow["right"]}}</view>
       </block>
     </view>
   </view>
 </view>
 
-<!-- footer -->
-  <view class="weui-footer weui-footer">
-    <view class="weui-footer__links">
-      <view class="weui-footer__link">更新于2019年2月20日</view>
-    </view>
-    <view class="weui-footer__text">非官方复旦大学校车时刻表v1.1.0</view>
-        </view>
 </view>

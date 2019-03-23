@@ -7,6 +7,12 @@
   align-items: center;
 }
 
+.next-bus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .name-route {
   display: flex;
   flex-direction: column;
@@ -77,6 +83,11 @@
   font-size: 17px;
 }
 
+.td{
+  font-weight: 600;
+  color: red;
+}
+
 .td1{
   background: #FFFFFF;
 }
@@ -90,11 +101,11 @@
   text-align: center;
 }
 
-.td1, .td2{
+.td, .td1, .td2{
   font-size: 15px;
 }
 
-.th, .td1, .td2{
+.th, .td, .td1, .td2{
   padding: 10px;
   width: 100%;
   text-align: center;

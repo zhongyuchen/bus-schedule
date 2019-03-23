@@ -14,15 +14,14 @@ var util = require("../../utils/util.js");
 Page({
   data: {
     // userinfo
-    userInfo: {
-      nickName: "未登录",
-      avatarUrl: "https://raw.githubusercontent.com/czhongyu/busschedule-wx/master/files/xiaohui.jpg"
-    },
+    userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     // user route
     departure: "？",
+    departTime: "？",
     destination: "？",
+    destinTime: "？",
     pickerDepart: "邯郸",
     pickerDestin: "江湾",
     week: "？",
@@ -52,7 +51,10 @@ Page({
       currentLoca: this.data.currentLoca,
       pickerDepart: this.data.pickerDepart,
       pickerDestin: this.data.pickerDestin,
-      pickerWeek: this.data.pickerWeek
+      pickerWeek: this.data.pickerWeek,
+
+      departTime: "",
+      destinTime: ""
     };
 
     // update picker display
@@ -62,6 +64,10 @@ Page({
 
     // update timelist
     data.timeList = timeTable[pyName[data.multiArray[0][data.multiIndex[0]]]][pyName[data.multiArray[1][data.multiIndex[1]]]][pyName[data.multiArray[2][data.multiIndex[2]]]];
+
+    let result = util.update_next(data.timeList);
+    data.departTime = result.departTime;
+    data.destinTime = result.destinTime;
 
     // update currentLoca
     data.currentLoca = {
@@ -122,7 +128,7 @@ Page({
     wx.showToast({
       title: 'loading',
       icon: 'loading',
-      duration: 8000
+      duration: 2000
     })
 
     // login
@@ -161,10 +167,13 @@ Page({
     } else {
       pickerWeek = "工作日";
     }
+    let result = util.update_next(this.data.timeList);
     this.setData({
       week: week,
       pickerWeek: pickerWeek,
-      timeList: timeTable[pyName[pickerWeek]][pyName[this.data.pickerDepart]][pyName[this.data.pickerDestin]]
+      timeList: timeTable[pyName[pickerWeek]][pyName[this.data.pickerDepart]][pyName[this.data.pickerDestin]],
+      departTime: result.departTime,
+      destinTime: result.destinTime
     })
 
     // load user route
@@ -186,11 +195,18 @@ Page({
           pickerDestin: res.result.data[0].destination,
 
           timeList: [],
-          currentLoca: {}
+          currentLoca: {},
+
+          departTime: "",
+          destinTime: ""
         };
 
         // update timelist
         data.timeList = timeTable[pyName[data.pickerWeek]][pyName[data.pickerDepart]][pyName[data.pickerDestin]];
+
+        let result = util.update_next(data.timeList);
+        data.departTime = result.departTime;
+        data.destinTime = result.destinTime;
 
         // update currentLoca
         data.currentLoca = {
@@ -203,7 +219,7 @@ Page({
 
     })
 
-    wx.hideToast()
+    // wx.hideToast()
   },
   // getUserInfo: function(e) {
   //   console.log(e)

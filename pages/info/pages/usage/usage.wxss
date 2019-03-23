@@ -1,0 +1,19 @@
+/* pages/info/pages/usage/usage.wxss */
+@import "../../../../lib/weui.wxss";
+
+.footer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+}
+
+.footer-img {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10px;
+}
+
+.footer-text {
+  font-size: 16px;
+}

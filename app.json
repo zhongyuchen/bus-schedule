@@ -1,11 +1,33 @@
 {
-  "pages":[
-    "pages/index/index"
+  "pages": [
+    "pages/index/index",
+    "pages/info/info",
+    "pages/info/pages/usage/usage"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTitleText": "复旦大学校车时刻表",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "data/icon_component.png",
+        "selectedIconPath": "data/icon_component_HL.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/info/info",
+        "iconPath": "data/icon_API.png",
+        "selectedIconPath": "data/icon_API_HL.png",
+        "text": "关于"
+      }
+    ]
   }
 }

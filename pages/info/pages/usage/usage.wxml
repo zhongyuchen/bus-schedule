@@ -1,0 +1,9 @@
+<!--pages/info/pages/usage/usage.wxml-->
+<view class="page">
+
+  <view class="footer">
+    <image src="../../../../data/github.png" class="footer-img"></image>
+    <text class="footer-text">czhongyu</text>
+  </view>
+
+</view>
