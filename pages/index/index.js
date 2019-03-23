@@ -162,10 +162,13 @@ Page({
     // basic update
     let week = util.getDayofweek();
     let pickerWeek;
+    let multiIndex = this.data.multiIndex;
     if (week == "周六" || week == "周日") {
       pickerWeek = "非工作日";
+      multiIndex[0] = 1;
     } else {
       pickerWeek = "工作日";
+      multiIndex[0] = 0;
     }
     let result = util.update_next(this.data.timeList);
     this.setData({
@@ -173,7 +176,8 @@ Page({
       pickerWeek: pickerWeek,
       timeList: timeTable[pyName[pickerWeek]][pyName[this.data.pickerDepart]][pyName[this.data.pickerDestin]],
       departTime: result.departTime,
-      destinTime: result.destinTime
+      destinTime: result.destinTime,
+      multiIndex: multiIndex
     })
 
     // load user route
@@ -198,8 +202,16 @@ Page({
           currentLoca: {},
 
           departTime: "",
-          destinTime: ""
+          destinTime: "",
+
+          multiArray: this.data.multiArray,
+          multiIndex: this.data.multiIndex
         };
+
+        data.multiIndex[1] = util.place2number(data.departure);
+        let setdepartResult = util.setDepart(data.multiIndex, data.multiArray, data.destination);
+        data.multiIndex = setdepartResult.multiIndex;
+        data.multiArray = setdepartResult.multiArray;
 
         // update timelist
         data.timeList = timeTable[pyName[data.pickerWeek]][pyName[data.pickerDepart]][pyName[data.pickerDestin]];

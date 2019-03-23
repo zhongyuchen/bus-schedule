@@ -58,9 +58,57 @@ function update_next(timeList) {
   }
 }
 
+function place2number (place) {
+  let f = {
+    "邯郸": 0,
+    "江湾": 1,
+    "枫林": 2,
+    "张江": 3,
+    "上科大": 4
+  };
+
+  return f[place];
+}
+
+function setDepart(multiIndex, multiArray, destination) {
+  switch (multiIndex[1]) {
+    case 0:
+      multiArray[2] = ['江湾', '枫林', '张江'];
+      if (destination == '江湾') { multiIndex[2] = 0; }
+      else if (destination == '枫林') { multiIndex[2] = 1; }
+      else { multiIndex[2] = 2; }
+      break;
+    case 1:
+      multiArray[2] = ['邯郸'];
+      multiIndex[2] = 0;
+      break;
+    case 2:
+      multiArray[2] = ['邯郸', '张江'];
+      if (destination == '邯郸') { multiIndex[2] = 0; }
+      else { multiIndex[2] = 1; }
+      break;
+    case 3:
+      multiArray[2] = ['邯郸', '枫林'];
+      if (destination == '邯郸') { multiIndex[2] = 0; }
+      else { multiIndex[2] = 1; }
+      break;
+    case 4:
+      multiArray[2] = ['张江'];
+      multiIndex[2] = 0;
+      break;
+  }
+  
+  return {
+    multiIndex: multiIndex,
+    multiArray: multiArray
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
   getDayofweek: getDayofweek,
   compare: compare,
-  update_next: update_next
+  update_next: update_next,
+  place2number: place2number,
+  setDepart: setDepart
 }
