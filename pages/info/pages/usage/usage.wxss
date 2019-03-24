@@ -2,6 +2,7 @@
 @import "../../../../lib/weui.wxss";
 
 .footer{
+  margin-bottom: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -16,4 +17,17 @@
 
 .footer-text {
   font-size: 16px;
+}
+
+.title{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.detail{
+  font-size: 16px;
+}
+
+.usage{
+  margin: 10%;
 }

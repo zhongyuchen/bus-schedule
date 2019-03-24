@@ -1,5 +1,8 @@
 <!--pages/info/pages/usage/usage.wxml-->
 <view class="page">
+  <view class="usage">
+    <rich-text nodes="{{htmlSnip}}"></rich-text>
+  </view>
 
   <view class="footer">
     <image src="../../../../data/github.png" class="footer-img"></image>
