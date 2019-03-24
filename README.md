@@ -1,30 +1,33 @@
 # busschedule-wx
 
 ![build status](https://img.shields.io/badge/build-passing-66c2a5.svg)
-![version](https://img.shields.io/badge/version-1.0.1-fc8d62.svg)
+![version](https://img.shields.io/badge/version-1.1.0-fc8d62.svg)
 [![Apache License](https://img.shields.io/badge/license-Apache2.0-8da0cb.svg)](http://www.apache.org/licenses/)
 
 Bus schedule of Fudan University hosted on __WeChat Mini Program__ 
-with a picker for choosing date, starting point and destination.
+capable of detecting current day of week and loading user's personal route when launching the app, 
+with a picker for choosing day of week, starting point and destination.
 
-![ercode](data/ercode.png)
+![ercode](files/ercode.png)
 
 ## Screen Shot
 
-![screen shot](data/screenshot.jpg)
+![screen shot](files/screenshot.jpg)
 
 ## Features
 
 * __The bus schedule will be updated on time (?)__
 * A picker for choosing date, starting point and destination
 * The exact location of starting point and destination are shown at the table header
-* Starting point in picker, exact starting location and departure time at starting point are all on the left
-* Destination in picker, exact destination location and departure time at destination are all on the right
+* The departure time and amount of the next buses are shown at the second row of the timetable
+* The current day of week will be detected and chosen for you when launching the app
+* If a personal route has been set, it will be chosen for you when launching the app
+* Personal route can be set by clicking the `设为常用` button
 
 ## Prerequisites
 
 * Since `wx-server-sdk` is used for cloud functions, 
-`wx-server-sdk` dependencies have to be installed at the root of each cloud function via the following command:
+`wx-server-sdk` dependencies have to be installed at __the root of each cloud function__ via the following command:
 ```commandline
 npm install --save wx-server-sdk@latest
 ```
