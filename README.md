@@ -1,7 +1,7 @@
 # busschedule-wx
 
 ![build status](https://img.shields.io/badge/build-passing-66c2a5.svg)
-![version](https://img.shields.io/badge/version-1.1.0-fc8d62.svg)
+![version](https://img.shields.io/badge/version-1.1.1-fc8d62.svg)
 [![Apache License](https://img.shields.io/badge/license-Apache2.0-8da0cb.svg)](http://www.apache.org/licenses/)
 
 Bus schedule of Fudan University hosted on __WeChat Mini Program__ 
@@ -23,6 +23,10 @@ with a picker for choosing day of week, starting point and destination.
 * The current day of week will be detected and chosen for you when launching the app
 * If a personal route has been set, it will be chosen for you when launching the app
 * Personal route can be set by clicking the `设为常用` button
+* Take user's network status into account
+    + If there's no network, change personal route is not allowed
+    + If network is disconnected, show toast
+    + If network is reconnected, show toast and reload user's info and personal route
 
 ## Prerequisites
 

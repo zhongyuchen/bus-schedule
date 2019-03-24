@@ -125,10 +125,23 @@ Page({
   //   })
   // },
   onLoad: function () {
-    wx.showToast({
-      title: 'loading',
-      icon: 'loading',
-      duration: 2000
+    wx.getNetworkType({
+      success(res) {
+        let networkType = res.subtype || res.networkType;
+        if (networkType == "none"){
+          wx.showToast({
+            title: '无网络连接',
+            icon: 'loading',
+            duration: 2000
+          })
+        } else {
+          wx.showToast({
+            title: '加载中',
+            icon: 'loading',
+            duration: 2000
+          })
+        }
+      }
     })
 
     // login
@@ -170,14 +183,47 @@ Page({
       pickerWeek = "工作日";
       multiIndex[0] = 0;
     }
-    let result = util.update_next(this.data.timeList);
+    let timeList = timeTable[pyName[pickerWeek]][pyName[this.data.pickerDepart]][pyName[this.data.pickerDestin]];
+    let result = util.update_next(timeList);
     this.setData({
       week: week,
       pickerWeek: pickerWeek,
-      timeList: timeTable[pyName[pickerWeek]][pyName[this.data.pickerDepart]][pyName[this.data.pickerDestin]],
+      timeList: timeList,
       departTime: result.departTime,
       destinTime: result.destinTime,
       multiIndex: multiIndex
+    })
+
+    wx.onNetworkStatusChange(function (res) {
+      if (res.isConnected === false) {
+        wx.showToast({
+          title: '无网络连接',
+          icon: 'loading',
+          duration: 2000
+        })
+      } else {
+        wx.showToast({
+          title: '加载中',
+          icon: 'loading',
+          duration: 2000
+        })
+
+        wx.cloud.init()
+        wx.cloud.callFunction({
+          name: 'get_route'
+        }).then(myres => {
+          // console.log(res)
+          if (myres.result.data[0]) {
+            // user route available
+            // load user timetable
+            let mythis = this;
+            let data = util.get_route_data(mythis, myres)
+
+            this.setData(data);
+          }
+
+        })
+      }
     })
 
     // load user route
@@ -189,42 +235,8 @@ Page({
       if (res.result.data[0]) {
         // user route available
         // load user timetable
-        var data = {
-          week: this.data.week,
-          departure: res.result.data[0].departure,
-          destination: res.result.data[0].destination,
-
-          pickerWeek: this.data.pickerWeek,
-          pickerDepart: res.result.data[0].departure,
-          pickerDestin: res.result.data[0].destination,
-
-          timeList: [],
-          currentLoca: {},
-
-          departTime: "",
-          destinTime: "",
-
-          multiArray: this.data.multiArray,
-          multiIndex: this.data.multiIndex
-        };
-
-        data.multiIndex[1] = util.place2number(data.departure);
-        let setdepartResult = util.setDepart(data.multiIndex, data.multiArray, data.destination);
-        data.multiIndex = setdepartResult.multiIndex;
-        data.multiArray = setdepartResult.multiArray;
-
-        // update timelist
-        data.timeList = timeTable[pyName[data.pickerWeek]][pyName[data.pickerDepart]][pyName[data.pickerDestin]];
-
-        let result = util.update_next(data.timeList);
-        data.departTime = result.departTime;
-        data.destinTime = result.destinTime;
-
-        // update currentLoca
-        data.currentLoca = {
-          "left": location[data.departure][data.destination],
-          "right": location[data.destination][data.departure]
-        };
+        let mythis = this;
+        let data = util.get_route_data(mythis, res)
 
         this.setData(data);
       }
@@ -253,32 +265,47 @@ Page({
       title: '提示',
       content: '设置常用路线为：' + newDepart + "/" + newDestin + "?",
       success(res) {
-        if (res.confirm) {
-          // set route
-          wx.cloud.init()
-          wx.cloud.callFunction({
-            name: 'store_route',
-            data: {
-              departure: newDepart,
-              destination: newDestin
+          if (res.confirm) {
+            wx.getNetworkType({
+              success(myres) {
+                let networkType = myres.subtype || myres.networkType;
+                if (networkType == "none") {
+                  wx.showToast({
+                    title: '无网络连接',
+                    icon: 'loading',
+                    duration: 2000
+                  })
+                } else {
+                  // set route
+                  wx.cloud.init()
+                  wx.cloud.callFunction({
+                    name: 'store_route',
+                    data: {
+                      departure: newDepart,
+                      destination: newDestin
+                    }
+                  }).then(datares => {
+                    // result
+                  })
+
+                  myThis.setData({
+                    departure: newDepart,
+                    destination: newDestin
+                  })
+
+                  wx.showToast({
+                    title: '设置成功',
+                    icon: 'success',
+                    duration: 2000
+                  })
+                }
+            }})
+
             }
-          }).then(res => {
-            // result
-          })
-
-          myThis.setData({
-            departure: newDepart,
-            destination: newDestin
-          })
-
-          wx.showToast({
-            title: '设置成功',
-            icon: 'success',
-            duration: 2000
-          })
         }
+  
       }
-    })
+    )
 
     this.setData(myThis);
   }

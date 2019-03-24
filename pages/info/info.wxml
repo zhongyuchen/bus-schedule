@@ -3,7 +3,7 @@
   <view class="info">
     <image src="../../data/xiaohui.jpg" class="info-logo"></image>
     <text class="info-name">复旦大学校车时刻表</text>
-    <text class="info-version">非官方版 v1.1.0</text>
+    <text class="info-version">非官方版 v1.1.1</text>
     <text class="info-update">更新于2019年2月20日</text>
   </view>
 

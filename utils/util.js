@@ -1,3 +1,7 @@
+var timeTable = require("../data/timetable.js").data;
+var location = require("../data/location.js").data;
+var pyName = require("../data/pyname.js").data;
+
 const formatTime = date => {
   // const year = date.getFullYear()
   // const month = date.getMonth() + 1
@@ -106,11 +110,53 @@ function setDepart(multiIndex, multiArray, destination) {
   }
 }
 
+function get_route_data(mythis, myres) {
+  var data = {
+    week: mythis.data.week,
+    departure: myres.result.data[0].departure,
+    destination: myres.result.data[0].destination,
+
+    pickerWeek: mythis.data.pickerWeek,
+    pickerDepart: myres.result.data[0].departure,
+    pickerDestin: myres.result.data[0].destination,
+
+    timeList: [],
+    currentLoca: {},
+
+    departTime: "",
+    destinTime: "",
+
+    multiArray: mythis.data.multiArray,
+    multiIndex: mythis.data.multiIndex
+  };
+
+  data.multiIndex[1] = place2number(data.departure);
+  let setdepartResult = setDepart(data.multiIndex, data.multiArray, data.destination);
+  data.multiIndex = setdepartResult.multiIndex;
+  data.multiArray = setdepartResult.multiArray;
+
+  // update timelist
+  data.timeList = timeTable[pyName[data.pickerWeek]][pyName[data.pickerDepart]][pyName[data.pickerDestin]];
+
+  let result = update_next(data.timeList);
+  data.departTime = result.departTime;
+  data.destinTime = result.destinTime;
+
+  // update currentLoca
+  data.currentLoca = {
+    "left": location[data.departure][data.destination],
+    "right": location[data.destination][data.departure]
+  };
+
+  return data;
+}
+
 module.exports = {
   formatTime: formatTime,
   getDayofweek: getDayofweek,
   compare: compare,
   update_next: update_next,
   place2number: place2number,
-  setDepart: setDepart
+  setDepart: setDepart,
+  get_route_data: get_route_data
 }
