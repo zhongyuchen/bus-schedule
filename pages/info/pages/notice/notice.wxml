@@ -1,0 +1,23 @@
+<!--pages/info/pages/notice/notice.wxml-->
+<view class="page">
+
+  <view class="title">
+    关于2019年清明节校车停运的通知
+  </view>
+  
+  <view class="usage">
+  各位师生：
+  </view>
+
+  <view class="usage">
+    <rich-text nodes="{{htmlSnip}}"></rich-text>
+  </view>
+
+  <view class="signiture">
+    总务处
+  </view>
+  <view class="signiture">
+    2019年4月1日
+  </view>
+  
+</view>

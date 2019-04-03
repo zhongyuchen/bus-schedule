@@ -1,0 +1,25 @@
+/* pages/info/pages/notice/notice.wxss */
+@import "../../../../lib/weui.wxss";
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 5%;
+}
+
+.signiture {
+  display: flex;
+  flex-direction:row;
+  justify-content:flex-end;
+  margin-right: 10%;
+}
+
+.usage{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+}

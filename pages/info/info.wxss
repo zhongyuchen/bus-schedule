@@ -35,8 +35,10 @@
 }
 
 .navigator {
-  border-top: solid 1rpx #dddddd;
   border-bottom: solid 1rpx #dddddd;
+}
+.navigator-top, .navigator {
+  border-top: solid 1rpx #dddddd;
   padding: 35rpx;
   position: relative;
   display: flex;

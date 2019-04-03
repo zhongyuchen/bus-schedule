@@ -86,6 +86,7 @@
 .td{
   font-weight: 600;
   color: red;
+  background: #F5F5F5;
 }
 
 .td1{
