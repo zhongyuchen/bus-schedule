@@ -37,6 +37,14 @@ with a picker for choosing day of week, starting point and destination.
 npm install --save wx-server-sdk@latest
 ```
 
+## Generate Timetable JSON File
+
+* Modify `INPUT_CSV` and `OUTPUT_JSON` in `files/tojson.py`
+* Generate timetable json file:
+```
+python files/tojson.py
+```
+
 ## Reference
 
 * [miniprogram-demo](https://github.com/wechat-miniprogram/miniprogram-demo)

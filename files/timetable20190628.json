@@ -1,4 +1,4 @@
-var timetable = {
+{
     "weekday": {
         "handan": {
             "jiangwan": [
@@ -397,8 +397,4 @@ var timetable = {
             "zhangjiang": []
         }
     }
-};
-
-module.exports = {
-  data: timetable
-};
+}
