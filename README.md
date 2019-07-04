@@ -45,6 +45,8 @@ npm install --save wx-server-sdk@latest
 python files/tojson.py
 ```
 
+* Replace the timetable json variable in `data/timetable.js` with the new one
+
 ## Reference
 
 * [miniprogram-demo](https://github.com/wechat-miniprogram/miniprogram-demo)
