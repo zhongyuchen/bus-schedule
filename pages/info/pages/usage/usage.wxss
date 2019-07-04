@@ -1,5 +1,6 @@
 /* pages/info/pages/usage/usage.wxss */
 @import "../../../../lib/weui.wxss";
+@import "../../info.wxss";
 
 .footer{
   margin-bottom: 10px;
@@ -17,20 +18,4 @@
 
 .footer-text {
   font-size: 16px;
-}
-
-.title{
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.detail{
-  font-size: 16px;
-}
-
-.usage{
-  margin-top: 5%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 10%;
 }

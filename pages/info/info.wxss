@@ -72,3 +72,24 @@
   height: 50rpx;
   margin-right: 15px;
 }
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 5%;
+}
+
+.usage{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+}
+
+.version{
+  display: flex;
+  align-items: center;
+}

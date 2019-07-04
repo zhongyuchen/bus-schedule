@@ -67,4 +67,9 @@
   </view>
 </view>
 
+  <view class="footer">
+    <image src="../../data/github.png" class="footer-img"></image>
+    <text class="footer-text">czhongyu</text>
+  </view>
+
 </view>
