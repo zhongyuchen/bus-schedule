@@ -125,6 +125,8 @@ Page({
   //   })
   // },
   onLoad: function () {
+    wx.cloud.init()
+
     wx.getNetworkType({
       success(res) {
         let networkType = res.subtype || res.networkType;
@@ -208,7 +210,7 @@ Page({
           duration: 2000
         })
 
-        wx.cloud.init()
+        // wx.cloud.init()
         wx.cloud.callFunction({
           name: 'get_route'
         }).then(myres => {
@@ -227,7 +229,7 @@ Page({
     })
 
     // load user route
-    wx.cloud.init()
+    // wx.cloud.init()
     wx.cloud.callFunction({
       name: 'get_route'
     }).then(res => {
@@ -277,7 +279,7 @@ Page({
                   })
                 } else {
                   // set route
-                  wx.cloud.init()
+                  // wx.cloud.init()
                   wx.cloud.callFunction({
                     name: 'store_route',
                     data: {

@@ -45,6 +45,19 @@ function update_next(timeList) {
   let departTime = "无";
   let destinTime = "无";
 
+  if (timeList == undefined) {
+    return {
+      departTime: departTime,
+      destinTime: destinTime
+    }
+  }
+  if (!timeList.hasOwnProperty("length")) {
+    return {
+      departTime: departTime,
+      destinTime: destinTime
+    }
+  }
+
   for (let i = 0; i < timeList.length; i++) {
     if (timeList[i]["left"] != "" && compare(timeList[i]["left"], time)) {
       departTime = timeList[i]["left"];
