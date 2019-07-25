@@ -106,7 +106,7 @@ Page({
             data.multiArray[2] = ['邯郸', '张江'];
             break;
           case 3:
-            data.multiArray[2] = ['邯郸', '枫林'];
+            data.multiArray[2] = ['邯郸', '枫林', '上科大'];
             break;
           case 4:
             data.multiArray[2] = ['张江'];

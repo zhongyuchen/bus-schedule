@@ -89,35 +89,23 @@ var timetable = {
             ],
             "fenglin": [
                 {
-                    "left": "",
-                    "right": "07:10 (2)"
-                },
-                {
                     "left": "07:20 (1)",
                     "right": "07:20 (1)"
                 },
                 {
-                    "left": "11:00 (2)",
+                    "left": "11:00 (1)",
                     "right": ""
                 },
                 {
                     "left": "",
-                    "right": "12:30 (2)"
+                    "right": "12:30 (1)"
                 },
                 {
                     "left": "16:30 (1)",
                     "right": "16:30 (1)"
-                },
-                {
-                    "left": "21:30 (1)",
-                    "right": "21:30 (1-Tue/Thu)"
                 }
             ],
             "zhangjiang": [
-                {
-                    "left": "",
-                    "right": "07:10 (1)"
-                },
                 {
                     "left": "07:30 (1)",
                     "right": ""
@@ -135,16 +123,12 @@ var timetable = {
                     "right": "09:30 (1)"
                 },
                 {
-                    "left": "11:00 (1)",
-                    "right": ""
-                },
-                {
                     "left": "11:50 (1)",
                     "right": ""
                 },
                 {
                     "left": "",
-                    "right": "12:30 (2)"
+                    "right": "12:30 (1)"
                 },
                 {
                     "left": "15:30 (1)",
@@ -153,10 +137,6 @@ var timetable = {
                 {
                     "left": "",
                     "right": "16:30 (1)"
-                },
-                {
-                    "left": "21:30 (1)",
-                    "right": ""
                 }
             ]
         },
@@ -251,28 +231,20 @@ var timetable = {
         "fenglin": {
             "handan": [
                 {
-                    "left": "07:10 (2)",
-                    "right": ""
-                },
-                {
                     "left": "07:20 (1)",
                     "right": "07:20 (1)"
                 },
                 {
                     "left": "",
-                    "right": "11:00 (2)"
+                    "right": "11:00 (1)"
                 },
                 {
-                    "left": "12:30 (2)",
+                    "left": "12:30 (1)",
                     "right": ""
                 },
                 {
                     "left": "16:30 (1)",
                     "right": "16:30 (1)"
-                },
-                {
-                    "left": "21:30 (1-Tue/Thu)",
-                    "right": "21:30 (1)"
                 }
             ],
             "zhangjiang": [
@@ -305,10 +277,6 @@ var timetable = {
         "zhangjiang": {
             "handan": [
                 {
-                    "left": "07:10 (1)",
-                    "right": ""
-                },
-                {
                     "left": "",
                     "right": "07:30 (1)"
                 },
@@ -326,14 +294,10 @@ var timetable = {
                 },
                 {
                     "left": "",
-                    "right": "11:00 (1)"
-                },
-                {
-                    "left": "",
                     "right": "11:50 (1)"
                 },
                 {
-                    "left": "12:30 (2)",
+                    "left": "12:30 (1)",
                     "right": ""
                 },
                 {
@@ -343,10 +307,6 @@ var timetable = {
                 {
                     "left": "16:30 (1)",
                     "right": ""
-                },
-                {
-                    "left": "",
-                    "right": "21:30 (1)"
                 }
             ],
             "fenglin": [
@@ -375,44 +335,10 @@ var timetable = {
                     "right": ""
                 }
             ],
-            "stu": [
-                {
-                    "left": "",
-                    "right": "08:30 (1)"
-                },
-                {
-                    "left": "12:30 (1)",
-                    "right": ""
-                },
-                {
-                    "left": "",
-                    "right": "17:30 (1)"
-                },
-                {
-                    "left": "21:30 (1)",
-                    "right": ""
-                }
-            ]
+            "stu": []
         },
         "stu": {
-            "zhangjiang": [
-                {
-                    "left": "08:30 (1)",
-                    "right": ""
-                },
-                {
-                    "left": "",
-                    "right": "12:30 (1)"
-                },
-                {
-                    "left": "17:30 (1)",
-                    "right": ""
-                },
-                {
-                    "left": "",
-                    "right": "21:30 (1)"
-                }
-            ]
+            "zhangjiang": []
         }
     },
     "weekend": {

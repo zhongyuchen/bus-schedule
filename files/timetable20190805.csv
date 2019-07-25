@@ -40,7 +40,3 @@ handan,zhangjiang,11:50,1,weekday
 zhangjiang,handan,12:30,1,weekday
 handan,zhangjiang,15:30,1,weekday
 zhangjiang,handan,16:30,1,weekday
-stu,zhangjiang,08:30,1,weekday
-zhangjiang,stu,12:30,1,weekday
-stu,zhangjiang,17:30,1,weekday
-zhangjiang,stu,21:30,1,weekday

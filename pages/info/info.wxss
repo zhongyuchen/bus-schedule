@@ -28,6 +28,13 @@
   margin: 8px;
 }
 
+.info-text{
+  font-size: 14px;
+  color: red;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
 .info-update{
   font-size: 14px;
   color: #6161cc;

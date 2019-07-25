@@ -5,10 +5,12 @@
     <text class="info-name">复旦大学校车时刻表</text>
     <view class="version">
       <button class="weui-btn mini-btn" type="default" size="mini">暑假版</button>
-      <text class="info-version">v1.1.3</text>
+      <text class="info-version">v1.1.4</text>
     </view>
-    
-    <text class="info-update">更新于2019年6月28日</text>
+    <text class="info-text">双休日所有校车停运</text>
+    <text class="info-text">暑期教学活动校车已停运</text>    
+    <text class="info-text">上科大——张江班次已停运</text>
+    <text class="info-update">更新于2019年8月5日</text>
   </view>
 
   <navigator url="pages/usage/usage" class="navigator-top" hover-class="navigator-hover">
