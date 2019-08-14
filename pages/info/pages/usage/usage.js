@@ -38,9 +38,8 @@ Page({
     htmlSnipShare:
       `<div class="div_class">
 <ul>
-<li>我真的懒得宣传了，如果你喜欢的话可以分享给其他人哟</li>
+<li>如果你喜欢的话可以分享给其他人哟</li>
 <li>项目代码在GitHub上开源，请搜索<b>czhongyu/busschedule-wx</b></li>
-<li>欢迎在GitHub上为本项目做贡献</li>
 </ul>
 </div>
 `
