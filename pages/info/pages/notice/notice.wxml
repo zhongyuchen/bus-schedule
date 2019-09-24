@@ -2,11 +2,11 @@
 <view class="page">
 
   <view class="title">
-    2019年暑假期间各校区校车调整通知
+    关于2019年国庆节校车停运的通知
   </view>
   
   <view class="usage">
-  各位教职工、各位同学：
+  各位师生：
   </view>
 
   <view class="usage">
@@ -17,7 +17,11 @@
     总务处
   </view>
   <view class="signiture">
-    2019年6月28日
+    2019年9月24日
+  </view>
+
+  <view class="ground">
+    <text class="ground-name">@czhongyu</text>
   </view>
   
 </view>

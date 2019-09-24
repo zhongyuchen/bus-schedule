@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .info-logo {  
@@ -23,23 +24,29 @@
   font-size: 20px;
 }
 
-.info-version{
-  font-size: 16px;
-  margin: 8px;
+.ground{
+  position: fixed;
+  text-align: center;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  font-size: 15px;
 }
 
-.info-text{
+.ground-name{
+  font-weight: 600;
+}
+
+.ground-update{
+  color: #6161cc;
+}
+
+/* .info-text{
   font-size: 14px;
   color: red;
   font-weight: 600;
   margin-bottom: 8px;
-}
-
-.info-update{
-  font-size: 14px;
-  color: #6161cc;
-  margin-bottom: 30px;
-}
+} */
 
 .navigator {
   border-bottom: solid 1rpx #dddddd;
@@ -96,7 +103,8 @@
   margin-bottom: 5%;
 }
 
-.version{
-  display: flex;
+/* .version{
+    display: flex;
+  flex-direction: column;
   align-items: center;
-}
+} */

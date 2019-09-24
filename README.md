@@ -1,8 +1,9 @@
 # busschedule-wx
 
 ![build status](https://img.shields.io/badge/build-passing-66c2a5.svg)
-![version](https://img.shields.io/badge/version-1.1.5-fc8d62.svg)
-![users](https://img.shields.io/badge/users-2%2C003-yellowgreen.svg)
+![version](https://img.shields.io/badge/version-1.1.6-fc8d62.svg)
+![users](https://img.shields.io/badge/users-3%2C976-blue.svg)
+![likes](https://img.shields.io/badge/likes-889-red.svg)
 [![Apache License](https://img.shields.io/badge/license-Apache%202.0-8da0cb.svg)](http://www.apache.org/licenses/)
 
 Bus schedule of Fudan University hosted on __WeChat Mini Program__ 
