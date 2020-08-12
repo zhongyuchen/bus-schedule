@@ -1,4 +1,4 @@
-# busschedule-wx
+# bus-schedule
 
 ![build status](https://img.shields.io/badge/build-passing-66c2a5.svg)
 ![version](https://img.shields.io/badge/version-1.1.6-fc8d62.svg)

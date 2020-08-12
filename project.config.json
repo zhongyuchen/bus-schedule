@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.6.2",
 	"appid": "wx0cf1b691aa8cee83",
-	"projectname": "busschedule-wx",
+	"projectname": "bus-schedule",
 	"isGameTourist": false,
 	"cloudfunctionRoot": "cloud-functions/",
 	"packOptions": {
