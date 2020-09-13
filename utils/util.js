@@ -82,8 +82,7 @@ function place2number (place) {
     "邯郸": 0,
     "江湾": 1,
     "枫林": 2,
-    "张江": 3,
-    "上科大": 4
+    "张江": 3
   };
 
   return f[place];

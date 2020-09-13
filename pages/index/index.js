@@ -27,7 +27,7 @@ Page({
     week: "？",
     pickerWeek: "工作日",
     // picker
-    multiArray: [['工作日', '非工作日'], ['邯郸', '江湾', '枫林', '张江', '上科大'], ['江湾', '枫林', '张江']],
+    multiArray: [['工作日', '非工作日'], ['邯郸', '江湾', '枫林', '张江'], ['江湾', '枫林', '张江']],
     multiIndex: [0, 0, 0],
     // timetable
     timeList: timeTable["weekday"]["handan"]["jiangwan"],
@@ -106,7 +106,7 @@ Page({
             data.multiArray[2] = ['邯郸', '张江'];
             break;
           case 3:
-            data.multiArray[2] = ['邯郸', '枫林', '上科大'];
+            data.multiArray[2] = ['邯郸', '枫林'];
             break;
           case 4:
             data.multiArray[2] = ['张江'];

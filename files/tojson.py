@@ -2,8 +2,8 @@ import csv
 import json
 import copy
 
-INPUT_CSV = "timetable20190826.csv"
-OUTPUT_JSON = "timetable20190826.json"
+INPUT_CSV = "20200831.csv"
+OUTPUT_JSON = "20200831.json"
 
 
 def timeList(dic, week, fro, to):
@@ -70,11 +70,7 @@ def tojson(filename):
         },
         "zhangjiang": {
             "handan": [],
-            "fenglin": [],
-            "stu": []
-        },
-        "stu": {
-            "zhangjiang": []
+            "fenglin": []
         }
     }
 
@@ -92,7 +88,7 @@ def tojson(filename):
         # parse data
         reader = csv.DictReader(file)
         for row in reader:
-            dic[row["week"]][row["from"]][row["to"]].append("%s (%s)" % (row["time"], row["amount"]))
+            dic[row["week"]][row["from"]][row["to"]].append(row["time"])
 
     # transform dic -> data
     for week in data:
