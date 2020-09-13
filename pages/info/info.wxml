@@ -23,7 +23,7 @@
     <view class="navigator-arrow"></view>
   </navigator>
   
-  <view class="ground">
-    <text class="ground-name">@czhongyu\n</text>
-  </view>
+  <!-- <view class="ground">
+    <text class="ground-name">@zhongyuchen\n</text>
+  </view> -->
 </view>

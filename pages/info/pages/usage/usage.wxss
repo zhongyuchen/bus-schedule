@@ -3,11 +3,14 @@
 @import "../../info.wxss";
 
 .footer{
-  margin-bottom: 10px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center; 
+  justify-content: center;
+margin-bottom: 10px;
+      position: fixed;
+  text-align: center;
+  bottom: 10px;
+  left: 0;
+  right: 0;
 }
 
 .footer-img {

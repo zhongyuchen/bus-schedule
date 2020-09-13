@@ -20,8 +20,8 @@
     2019年9月24日
   </view>
 
-  <view class="ground">
-    <text class="ground-name">@czhongyu</text>
-  </view>
+  <!-- <view class="ground">
+    <text class="ground-name">@zhongyuchen</text>
+  </view> -->
   
 </view>
