@@ -139,8 +139,7 @@ Page({
         } else {
           wx.showToast({
             title: '加载中',
-            icon: 'loading',
-            duration: 2000
+            icon: 'loading'
           })
         }
       }
@@ -206,24 +205,25 @@ Page({
       } else {
         wx.showToast({
           title: '加载中',
-          icon: 'loading',
-          duration: 2000
+          icon: 'loading'
         })
 
         // wx.cloud.init()
         wx.cloud.callFunction({
           name: 'get_route'
         }).then(myres => {
-          // console.log(res)
-          if (myres.result.data[0]) {
+          // console.log(myres)
+          let departure = '邯郸';
+          let destination = '江湾';
+          if (myres.result.data != null && myres.result.data.length > 0) {
             // user route available
             // load user timetable
-            let mythis = this;
-            let data = util.get_route_data(mythis, myres)
-
-            this.setData(data);
+            departure = myres.result.data[0].departure;
+            destination = myres.result.data[0].destination;
           }
-
+          let data = util.get_route_data(this, departure, destination);
+          this.setData(data);
+          wx.hideToast();
         })
       }
     })
@@ -234,18 +234,19 @@ Page({
       name: 'get_route'
     }).then(res => {
       // console.log(res)
-      if (res.result.data[0]) {
+      let departure = '邯郸';
+      let destination = '江湾';
+      // console.log(res);
+      if (res.result.data != null && res.result.data.length > 0) {
         // user route available
         // load user timetable
-        let mythis = this;
-        let data = util.get_route_data(mythis, res)
-
-        this.setData(data);
+        departure = res.result.data[0].departure;
+        destination = res.result.data[0].destination;
       }
-
+      let data = util.get_route_data(this, departure, destination);
+      this.setData(data);
+      wx.hideToast();
     })
-
-    // wx.hideToast()
   },
   // getUserInfo: function(e) {
   //   console.log(e)

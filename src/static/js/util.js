@@ -122,15 +122,15 @@ function setDepart(multiIndex, multiArray, destination) {
   }
 }
 
-function get_route_data(mythis, myres) {
+function get_route_data(mythis, departure, destination) {
   var data = {
     week: mythis.data.week,
-    departure: myres.result.data[0].departure,
-    destination: myres.result.data[0].destination,
+    departure: departure,
+    destination: destination,
 
     pickerWeek: mythis.data.pickerWeek,
-    pickerDepart: myres.result.data[0].departure,
-    pickerDestin: myres.result.data[0].destination,
+    pickerDepart: departure,
+    pickerDestin: destination,
 
     timeList: [],
     currentLoca: {},
