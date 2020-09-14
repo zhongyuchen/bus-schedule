@@ -1,5 +1,6 @@
 {
 	"description": "项目配置文件。",
+	"miniprogramRoot": "src/",
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
@@ -8,7 +9,8 @@
 		"newFeature": true,
 		"nodeModules": true,
 		"autoAudits": false,
-		"uglifyFileName": true
+		"uglifyFileName": true,
+		"checkSiteMap": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.2",
@@ -20,11 +22,19 @@
 		"ignore": [
 			{
 				"type": "folder",
-				"value": "files"
+				"value": ".idea"
 			},
 			{
 				"type": "folder",
-				"value": ".idea"
+				"value": "cloud-functions"
+			},
+			{
+				"type": "folder",
+				"value": "data"
+			},
+			{
+				"type": "folder",
+				"value": "pic"
 			},
 			{
 				"type": "file",

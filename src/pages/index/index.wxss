@@ -1,5 +1,5 @@
 /**index.wxss**/
-@import "../../lib/weui.wxss";
+@import "../../static/wxss/weui.wxss";
 @import "../info/info.wxss";
 
 .userinfo {

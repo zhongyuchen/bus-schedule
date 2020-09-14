@@ -19,14 +19,14 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "data/icon_component.png",
-        "selectedIconPath": "data/icon_component_HL.png",
+        "iconPath": "static/pic/icon_component.png",
+        "selectedIconPath": "static/pic/icon_component_HL.png",
         "text": "主页"
       },
       {
         "pagePath": "pages/info/info",
-        "iconPath": "data/icon_API.png",
-        "selectedIconPath": "data/icon_API_HL.png",
+        "iconPath": "static/pic/icon_API.png",
+        "selectedIconPath": "static/pic/icon_API_HL.png",
         "text": "关于"
       }
     ]

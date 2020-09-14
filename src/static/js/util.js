@@ -1,6 +1,6 @@
-var timeTable = require("../data/timetable.js").data;
-var location = require("../data/location.js").data;
-var pyName = require("../data/pyname.js").data;
+var timeTable = require("timetable.js").data;
+var location = require("location.js").data;
+var pyName = require("pyname.js").data;
 
 const formatTime = date => {
   // const year = date.getFullYear()

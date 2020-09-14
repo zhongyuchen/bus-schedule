@@ -1,5 +1,5 @@
 /* pages/info/info.wxss */
-@import "../../lib/weui.wxss";
+@import "../../static/wxss/weui.wxss";
 
 .info {
   display: flex;

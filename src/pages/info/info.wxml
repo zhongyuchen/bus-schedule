@@ -1,7 +1,7 @@
 <!--pages/info/info.wxml-->
 <view class="page">
   <view class="info">
-    <image src="../../data/xiaohui.jpg" class="info-logo"></image>
+    <image src="../../static/pic/xiaohui.jpg" class="info-logo"></image>
     <text class="info-name">复旦大学校车时刻表</text>
     <!-- <view class="version"> -->
       <!-- <button class="weui-btn mini-btn" type="default" size="mini">非官方版</button> -->
@@ -12,13 +12,13 @@
   </view>
 
   <navigator url="pages/usage/usage" class="navigator-top" hover-class="navigator-hover">
-    <image src="../../data/form.png" class="navigator-img"></image>
+    <image src="../../static/pic/form.png" class="navigator-img"></image>
     <view class="navigator-text">使用说明</view>
     <view class="navigator-arrow"></view>
   </navigator>
 
     <navigator url="pages/notice/notice" class="navigator" hover-class="navigator-hover">
-    <image src="../../data/view.png" class="navigator-img"></image>
+    <image src="../../static/pic/view.png" class="navigator-img"></image>
     <view class="navigator-text">关于2019年国庆节校车停运的通知</view>
     <view class="navigator-arrow"></view>
   </navigator>

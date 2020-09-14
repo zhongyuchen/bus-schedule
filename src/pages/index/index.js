@@ -3,12 +3,12 @@
 const app = getApp()
 
 //get local data
-var timeTable = require("../../data/timetable.js").data;
-var location = require("../../data/location.js").data;
-var pyName = require("../../data/pyname.js").data;
+var timeTable = require("../../static/js/timetable.js").data;
+var location = require("../../static/js/location.js").data;
+var pyName = require("../../static/js/pyname.js").data;
 
 //util
-var util = require("../../utils/util.js");
+var util = require("../../static/js/util.js");
 
 //build the page
 Page({
