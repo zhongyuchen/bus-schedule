@@ -21,7 +21,7 @@ const formatNumber = n => {
 }
 
 function getDayofweek() {
-  let show_day = new Array('周日', '周一', '周二', '周三', '周四', '周五', '周六');
+  let show_day = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
   let date = new Date();
   let day = date.getDay();
   let week = show_day[day];
@@ -166,9 +166,9 @@ function get_route_data(mythis, myres) {
 module.exports = {
   formatTime: formatTime,
   getDayofweek: getDayofweek,
-  compare: compare,
+  // compare: compare,
   update_next: update_next,
-  place2number: place2number,
-  setDepart: setDepart,
+  // place2number: place2number,
+  // setDepart: setDepart,
   get_route_data: get_route_data
 }

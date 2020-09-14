@@ -105,4 +105,5 @@ if __name__ == "__main__":
     timeTable = tojson(INPUT_CSV)
 
     with open(OUTPUT_JSON, "w") as file:
-        json.dump(timeTable, file, indent=4)
+        # json.dump(timeTable, file, indent=4)
+        json.dump(timeTable, file)
