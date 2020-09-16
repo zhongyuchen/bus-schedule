@@ -2,8 +2,8 @@ import csv
 import json
 import copy
 
-INPUT_CSV = "20200831.csv"
-OUTPUT_JSON = "20200831.json"
+INPUT_CSV = "20200916.csv"
+OUTPUT_JSON = "20200916.json"
 
 
 def timeList(dic, week, fro, to):
