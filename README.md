@@ -1,8 +1,8 @@
 # bus-schedule
 
-![version](https://img.shields.io/badge/version-1.1.7-66c2a5.svg)
-![users](https://img.shields.io/badge/users-7%2C854-fc8d62.svg)
-![likes](https://img.shields.io/badge/likes-1%2C828-red.svg)
+![version](https://img.shields.io/badge/version-1.1.8-66c2a5.svg)
+![users](https://img.shields.io/badge/users-8%2C571-fc8d62.svg)
+![likes](https://img.shields.io/badge/likes-1%2C999-red.svg)
 
 Bus schedule of Fudan University hosted on __WeChat Mini Program__ 
 capable of detecting current day of week and loading user's personal route when launching the app, 
