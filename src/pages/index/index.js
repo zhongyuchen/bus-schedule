@@ -195,8 +195,8 @@ Page({
       multiIndex: multiIndex
     })
 
-    wx.onNetworkStatusChange(function (res) {
-      if (res.isConnected === false) {
+    wx.onNetworkStatusChange(function (status) {
+      if (status.isConnected === false) {
         wx.showToast({
           title: '无网络连接',
           icon: 'loading',
@@ -210,20 +210,26 @@ Page({
 
         // wx.cloud.init()
         wx.cloud.callFunction({
-          name: 'get_route'
-        }).then(myres => {
-          // console.log(myres)
-          let departure = '邯郸';
-          let destination = '江湾';
-          if (myres.result.data != null && myres.result.data.length > 0) {
-            // user route available
-            // load user timetable
-            departure = myres.result.data[0].departure;
-            destination = myres.result.data[0].destination;
+          name: 'get_route',
+          success: res => {
+            let departure = '邯郸';
+            let destination = '江湾';
+            if ('data' in res.result && res.result.data.length > 0) {
+              departure = res.result.data[0].departure;
+              destination = res.result.data[0].destination;
+            }
+            let data = util.get_route_data(this, departure, destination);
+            this.setData(data);
+          },
+          fail: err => {
+            let departure = '邯郸';
+            let destination = '江湾';
+            let data = util.get_route_data(this, departure, destination);
+            this.setData(data);
+          },
+          complete: () => {
+            wx.hideToast();
           }
-          let data = util.get_route_data(this, departure, destination);
-          this.setData(data);
-          wx.hideToast();
         })
       }
     })
@@ -231,21 +237,26 @@ Page({
     // load user route
     // wx.cloud.init()
     wx.cloud.callFunction({
-      name: 'get_route'
-    }).then(res => {
-      // console.log(res)
-      let departure = '邯郸';
-      let destination = '江湾';
-      // console.log(res);
-      if (res.result.data != null && res.result.data.length > 0) {
-        // user route available
-        // load user timetable
-        departure = res.result.data[0].departure;
-        destination = res.result.data[0].destination;
+      name: 'get_route',
+      success: res => {
+        let departure = '邯郸';
+        let destination = '江湾';
+        if ('data' in res.result && res.result.data.length > 0) {
+          departure = res.result.data[0].departure;
+          destination = res.result.data[0].destination;
+        }
+        let data = util.get_route_data(this, departure, destination);
+        this.setData(data);
+      },
+      fail: err => {
+        let departure = '邯郸';
+        let destination = '江湾';
+        let data = util.get_route_data(this, departure, destination);
+        this.setData(data);
+      },
+      complete: () => {
+        wx.hideToast();
       }
-      let data = util.get_route_data(this, departure, destination);
-      this.setData(data);
-      wx.hideToast();
     })
   },
   // getUserInfo: function(e) {
