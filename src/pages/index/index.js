@@ -214,7 +214,7 @@ Page({
           success: res => {
             let departure = '邯郸';
             let destination = '江湾';
-            if ('data' in res.result && res.result.data.length > 0) {
+            if ('data' in res.result && res.result.data != null && res.result.data.length > 0) {
               departure = res.result.data[0].departure;
               destination = res.result.data[0].destination;
             }
@@ -241,7 +241,7 @@ Page({
       success: res => {
         let departure = '邯郸';
         let destination = '江湾';
-        if ('data' in res.result && res.result.data.length > 0) {
+        if ('data' in res.result && res.result.data != null && res.result.data.length > 0) {
           departure = res.result.data[0].departure;
           destination = res.result.data[0].destination;
         }
