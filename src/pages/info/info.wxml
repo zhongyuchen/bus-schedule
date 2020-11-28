@@ -8,7 +8,7 @@
       <!-- <text class="info-version">v1.1.6</text> -->
     <!-- </view> -->
     <!-- <text class="info-text">暑期教学活动校车已停运</text>     -->
-    <text class="info-update">更新于2020年9月16日</text>
+    <text class="info-update">更新于2020年11月1日</text>
   </view>
 
   <navigator url="pages/usage/usage" class="navigator-top" hover-class="navigator-hover">

@@ -120,6 +120,7 @@ handan,jiangwan,22:00,weekday
 jiangwan,handan,22:10,weekday
 handan,jiangwan,22:15,weekday
 handan,jiangwan,22:30,weekday
+jiangwan,handan,22:30,weekday
 jiangwan,handan,07:40,weekend
 jiangwan,handan,08:00,weekend
 handan,jiangwan,08:20,weekend
@@ -132,7 +133,12 @@ handan,jiangwan,09:20,weekend
 jiangwan,handan,09:20,weekend
 handan,jiangwan,09:40,weekend
 jiangwan,handan,09:40,weekend
+handan,jiangwan,10:00,weekend
 jiangwan,handan,10:20,weekend
+handan,jiangwan,10:50,weekend
+jiangwan,handan,11:50,weekend
+handan,jiangwan,12:20,weekend
+jiangwan,handan,16:30,weekend
 handan,jiangwan,17:00,weekend
 jiangwan,handan,17:30,weekend
 handan,jiangwan,20:15,weekend
@@ -142,6 +148,7 @@ jiangwan,handan,21:20,weekend
 handan,jiangwan,21:45,weekend
 jiangwan,handan,22:10,weekend
 handan,jiangwan,22:30,weekend
+jiangwan,handan,22:30,weekend
 zhangjiang,handan,07:00,weekday
 handan,zhangjiang,07:10,weekday
 zhangjiang,handan,07:15,weekday
