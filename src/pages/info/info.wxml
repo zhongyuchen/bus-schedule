@@ -17,9 +17,11 @@
     <view class="navigator-arrow"></view>
   </navigator>
 
-    <navigator url="pages/notice/notice" class="navigator" hover-class="navigator-hover">
+  <navigator url="pages/notice/notice" class="navigator" hover-class="navigator-hover">
     <image src="../../static/pic/view.png" class="navigator-img"></image>
-    <view class="navigator-text">关于2019年国庆节校车停运的通知</view>
+    <view class="navigator-text">
+      <rich-text nodes="{{noticeTitle}}"></rich-text>
+    </view>
     <view class="navigator-arrow"></view>
   </navigator>
   

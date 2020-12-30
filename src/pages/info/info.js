@@ -5,14 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    noticeTitle: "关于2019年国庆节校车停运的通知"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading'
+    })
+    wx.cloud.init()
+    wx.cloud.callFunction({
+      name: 'get_notice',
+      success: res => {
+        let data = {
+          noticeTitle: res.result.data[0].title
+        }
+        this.setData(data);
+      },
+      complete: () => {
+        wx.hideToast();
+      }
+    })
   },
 
   /**
