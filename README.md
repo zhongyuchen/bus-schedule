@@ -37,8 +37,8 @@ npm install --save wx-server-sdk@latest
 ```
 python files/tojson.py
 ```
-* Upload the `.json` file into table `timetable` in database (for online update)
-* Replace the timetable json variable in `data/timetable.js` with the new one (for static use)
+* Upload the `.json` file into database table `timetable` (for online update)
+* Replace the timetable json variable in `data/timetable.js` with the new one, without the `period` key (for static usage)
 
 ## Reference
 
