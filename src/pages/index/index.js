@@ -39,8 +39,8 @@ Page({
     period: {
       name: "?",
       period: "semester",
-      weekday: "weekday",
-      weekend: "weekend"
+      "工作日": "工作日",
+      "非工作日": "非工作日"
     },
     networkType: "无网络连接"
   },
@@ -315,14 +315,11 @@ Page({
 
         // basic update
         let timeList = timeTable[translate[week.weekType]][translate[this.data.pickerDepart]][translate[this.data.pickerDestin]];
-        let result = util.update_next(timeList);
         this.setData({
           week: week.week,
           weekType: week.weekType,
           pickerWeek: week.weekType,
           timeList: timeList,
-          departTime: result.departTime,
-          destinTime: result.destinTime,
           multiIndex: multiIndex
         })
         this.userRoute();
@@ -350,7 +347,6 @@ Page({
   },
   onLoad: function () {
     wx.cloud.init()
-
     this.networkStatus();
     this.userInfo();
     this.networkStatusChange();
