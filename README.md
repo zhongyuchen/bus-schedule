@@ -4,9 +4,7 @@
 ![users](https://img.shields.io/badge/users-12%2C229-fc8d62.svg)
 ![likes](https://img.shields.io/badge/likes-2%2C976-red.svg)
 
-Bus schedule of Fudan University hosted on __WeChat Mini Program__ 
-capable of detecting current day of week and loading user's personal route when launching the app, 
-with a picker for choosing day of week, starting point and destination.
+Bus schedule of Fudan University hosted on __WeChat Mini Program__ / 复旦大学校车时刻表微信小程序
 
 ![ercode](pic/ercode.png)
 
@@ -16,23 +14,17 @@ with a picker for choosing day of week, starting point and destination.
 
 ## Features
 
-* __The bus schedule will be updated on time (?)__
-* A picker for choosing date, starting point and destination
-* The exact location of starting point and destination are shown at the table header
-* The departure time and amount of the next buses are shown at the second row of the timetable
-* The current day of week will be detected and chosen for you when launching the app
-* If a personal route has been set, it will be chosen for you when launching the app
-* Personal route can be set by clicking the `设为常用` button
-* Take user's network status into account
-    + If there's no network, change personal route is not allowed
-    + If network is disconnected, show toast
-    + If network is reconnected, show toast and reload user's info and personal route
-* Notice page for bus schedule related notice
+* 网络状态：在用户昵称右侧显示网络连接状态，请在有网络连接的情况下使用，否则将无法加载时刻表、加载/更改常用路线
+* 常用路线：在用户昵称下显示，格式为出发地点/目的地点，通过`设为常用`按钮可以把当前路线设为常用路线
+* 当前日期：在用户昵称下显示，格式为周几/是否工作日/时间段，自动选择是否工作日/非工作日，并加载常用路线对应的时刻表
+* 选择器：查看其他时间或路线的时刻表
+* 时刻表：黑色粗体字为发车/下车地点，红粗体字为下一班次发车时间，黑体字为发车时间
+* 校车调整通知：了解最新校车运行调整安排
 
 ## Prerequisites
 
 * Since `wx-server-sdk` is used for cloud functions, 
-`wx-server-sdk` dependencies have to be installed at __the root of each cloud function__ via the following command:
+`wx-server-sdk` dependencies have to be installed at __the root of every cloud function__ via the following command:
 ```commandline
 npm install --save wx-server-sdk@latest
 ```
@@ -40,12 +32,13 @@ npm install --save wx-server-sdk@latest
 ## Generate Timetable JSON File
 
 * Modify `INPUT_CSV` and `OUTPUT_JSON` in `files/tojson.py`
+* Modify `period` to signify the period of the timetable
 * Generate timetable json file:
 ```
 python files/tojson.py
 ```
-
-* Replace the timetable json variable in `data/timetable.js` with the new one
+* Upload the `.json` file into table `timetable` in database (for online update)
+* Replace the timetable json variable in `data/timetable.js` with the new one (for static use)
 
 ## Reference
 
@@ -56,7 +49,6 @@ python files/tojson.py
 ## Links
 
 * [微信公众平台](https://mp.weixin.qq.com/)
-* [Official notice on bus schedule of Fudan University](http://www.xyfw.fudan.edu.cn/p2049c1954/list.htm)
 * [Map of Fudan University](http://map.fudan.edu.cn)
 
 ## Author
