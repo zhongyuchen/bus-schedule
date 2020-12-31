@@ -345,8 +345,16 @@ Page({
       }
     })
   },
+  getStaticDepartTime: function() {
+    let result = util.update_next(this.data.timeList);
+    this.setData({
+      departTime: result.departTime,
+      destinTime: result.destinTime
+    })
+  },
   onLoad: function () {
     wx.cloud.init()
+    this.getStaticDepartTime();
     this.networkStatus();
     this.userInfo();
     this.networkStatusChange();
