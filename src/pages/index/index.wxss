@@ -33,11 +33,15 @@
 
 .userinfo-nickname {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
+}
+
+.network-type {
+  color: red;
 }
 
 .route{
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .button-view{

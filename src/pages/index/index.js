@@ -5,7 +5,7 @@ const app = getApp()
 //get local data
 var timeTable = require("../../static/js/timetable.js").data;
 var location = require("../../static/js/location.js").data;
-var pyName = require("../../static/js/pyname.js").data;
+var translate = require("../../static/js/translate.js").data;
 
 //util
 var util = require("../../static/js/util.js");
@@ -18,13 +18,14 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     // user route
-    departure: "？",
-    departTime: "？",
-    destination: "？",
-    destinTime: "？",
+    departure: "?",
+    departTime: "?",
+    destination: "?",
+    destinTime: "?",
     pickerDepart: "邯郸",
     pickerDestin: "江湾",
-    week: "？",
+    week: "?",
+    weekType: "?",
     pickerWeek: "工作日",
     // picker
     multiArray: [['工作日', '非工作日'], ['邯郸', '江湾', '枫林', '张江'], ['江湾', '枫林', '张江']],
@@ -34,12 +35,15 @@ Page({
     currentLoca: {
       "left": location["邯郸"]["江湾"],
       "right": location["江湾"]["邯郸"]
-    }
+    },
+    period: {
+      name: "?",
+      period: "semester",
+      weekday: "weekday",
+      weekend: "weekend"
+    },
+    networkType: "无网络连接"
   },
-  //事件处理函数
-  // bindGetUserInfo(e) {
-  //   console.log(e.detail.userInfo)
-  // },
   bindMultiPickerChange: function (e) {
     // console.log('picker发送选择改变，携带值为', e.detail.value)
 
@@ -63,7 +67,7 @@ Page({
     data.pickerDestin = data.multiArray[2][data.multiIndex[2]];
 
     // update timelist
-    data.timeList = timeTable[pyName[data.multiArray[0][data.multiIndex[0]]]][pyName[data.multiArray[1][data.multiIndex[1]]]][pyName[data.multiArray[2][data.multiIndex[2]]]];
+    data.timeList = timeTable[translate[data.multiArray[0][data.multiIndex[0]]]][translate[data.multiArray[1][data.multiIndex[1]]]][translate[data.multiArray[2][data.multiIndex[2]]]];
 
     let result = util.update_next(data.timeList);
     data.departTime = result.departTime;
@@ -124,9 +128,8 @@ Page({
   //     url: '../logs/logs'
   //   })
   // },
-  onLoad: function () {
-    wx.cloud.init()
-
+  networkStatus: function() {
+    let networkThis = this;
     wx.getNetworkType({
       success(res) {
         let networkType = res.subtype || res.networkType;
@@ -136,15 +139,22 @@ Page({
             icon: 'loading',
             duration: 2000
           })
+          networkThis.setData({
+            networkType: "无网络连接"
+          })
         } else {
           wx.showToast({
             title: '加载中',
             icon: 'loading'
           })
+          networkThis.setData({
+            networkType: ""
+          })
         }
       }
     })
-
+  },
+  userInfo: function() {
     // login
     if (app.globalData.userInfo) {
       this.setData({
@@ -172,29 +182,9 @@ Page({
         }
       })
     }
-
-    // basic update
-    let week = util.getDayofweek();
-    let pickerWeek;
-    let multiIndex = this.data.multiIndex;
-    if (week == "周六" || week == "周日") {
-      pickerWeek = "非工作日";
-      multiIndex[0] = 1;
-    } else {
-      pickerWeek = "工作日";
-      multiIndex[0] = 0;
-    }
-    let timeList = timeTable[pyName[pickerWeek]][pyName[this.data.pickerDepart]][pyName[this.data.pickerDestin]];
-    let result = util.update_next(timeList);
-    this.setData({
-      week: week,
-      pickerWeek: pickerWeek,
-      timeList: timeList,
-      departTime: result.departTime,
-      destinTime: result.destinTime,
-      multiIndex: multiIndex
-    })
-
+  },
+  networkStatusChange: function() {
+    let networkChangeThis = this;
     wx.onNetworkStatusChange(function (status) {
       if (status.isConnected === false) {
         wx.showToast({
@@ -202,40 +192,63 @@ Page({
           icon: 'loading',
           duration: 2000
         })
+        networkChangeThis.setData({
+          networkType: "无网络连接"
+        })
       } else {
         wx.showToast({
           title: '加载中',
           icon: 'loading'
         })
-
-        // wx.cloud.init()
-        wx.cloud.callFunction({
-          name: 'get_route',
-          success: res => {
-            let departure = '邯郸';
-            let destination = '江湾';
-            if ('data' in res.result && res.result.data != null && res.result.data.length > 0) {
-              departure = res.result.data[0].departure;
-              destination = res.result.data[0].destination;
-            }
-            let data = util.get_route_data(this, departure, destination);
-            this.setData(data);
-          },
-          fail: err => {
-            let departure = '邯郸';
-            let destination = '江湾';
-            let data = util.get_route_data(this, departure, destination);
-            this.setData(data);
-          },
-          complete: () => {
-            wx.hideToast();
-          }
+        networkChangeThis.setData({
+          networkType: ""
         })
+        networkChangeThis.loadPeriod();
       }
     })
-
+  },
+  get_route_data: function(departure, destination) {
+    let data = {
+      week: this.data.week,
+      departure: departure,
+      destination: destination,
+  
+      pickerWeek: this.data.pickerWeek,
+      pickerDepart: departure,
+      pickerDestin: destination,
+  
+      timeList: [],
+      currentLoca: {},
+  
+      departTime: "",
+      destinTime: "",
+  
+      multiArray: this.data.multiArray,
+      multiIndex: this.data.multiIndex
+    };
+  
+    data.multiIndex[1] = util.place2number(data.departure);
+    let setdepartResult = util.setDepart(data.multiIndex, data.multiArray, data.destination);
+    data.multiIndex = setdepartResult.multiIndex;
+    data.multiArray = setdepartResult.multiArray;
+  
+    // update timelist
+    data.timeList = timeTable[translate[data.pickerWeek]][translate[data.pickerDepart]][translate[data.pickerDestin]];
+  
+    let result = util.update_next(data.timeList);
+    data.departTime = result.departTime;
+    data.destinTime = result.destinTime;
+  
+    // update currentLoca
+    data.currentLoca = {
+      "left": location[data.departure][data.destination],
+      "right": location[data.destination][data.departure]
+    };
+  
+    this.setData(data);
+  },
+  userRoute: function() {
     // load user route
-    // wx.cloud.init()
     wx.cloud.callFunction({
       name: 'get_route',
       success: res => {
@@ -245,13 +258,13 @@ Page({
           departure = res.result.data[0].departure;
           destination = res.result.data[0].destination;
         }
-        let data = util.get_route_data(this, departure, destination);
+        let data = this.get_route_data(departure, destination);
         this.setData(data);
       },
       fail: err => {
         let departure = '邯郸';
         let destination = '江湾';
-        let data = util.get_route_data(this, departure, destination);
+        let data = this.get_route_data(departure, destination);
         this.setData(data);
       },
       complete: () => {
@@ -259,68 +272,137 @@ Page({
       }
     })
   },
-  // getUserInfo: function(e) {
-  //   console.log(e)
-  //   if (e.detail.userInfo) {
-  //     app.globalData.userInfo = e.detail.userInfo
-  //     this.setData({
-  //       userInfo: e.detail.userInfo,
-  //       hasUserInfo: true
-  //     })
-  //   }
-  // },
+  getWeekType: function() {
+    // get week & weekType
+    // 周几
+    let week = util.getDayofweek();
+    // 工作日/非工作日
+    let weekType;
+    if (week == "周六" || week == "周日") {
+      weekType = "非工作日";
+    } else {
+      weekType = "工作日";
+    }
+    // update weekType based on period
+    weekType = this.data.period[weekType];
+
+    return {
+      week: week,
+      weekType: weekType
+    }
+  },
+  loadTimetable: function() {
+    // get timetable
+    wx.cloud.callFunction({
+      name: 'get_timetable',
+      data: {
+        period: this.data.period.period
+      },
+      success: res => {
+        // update global timeTable
+        timeTable = res.result.data[0];
+      },
+      complete: () => {
+        let week = this.getWeekType();
+        // update picker weekType index
+        let multiIndex = this.data.multiIndex;
+        if (week.weekType == "非工作日") {
+          multiIndex[0] = 1;
+        }
+        else {
+          multiIndex[0] = 0;
+        }
+
+        // basic update
+        let timeList = timeTable[translate[week.weekType]][translate[this.data.pickerDepart]][translate[this.data.pickerDestin]];
+        let result = util.update_next(timeList);
+        this.setData({
+          week: week.week,
+          weekType: week.weekType,
+          pickerWeek: week.weekType,
+          timeList: timeList,
+          departTime: result.departTime,
+          destinTime: result.destinTime,
+          multiIndex: multiIndex
+        })
+        this.userRoute();
+      }
+    })
+  },
+  loadPeriod: function() { 
+    // get period
+    wx.cloud.callFunction({
+      name: 'get_period',
+      success: res => {
+        this.setData({
+          period: {
+            name: res.result.data[0].name,
+            period: res.result.data[0].period,
+            "工作日": translate[res.result.data[0].weekday],
+            "非工作日": translate[res.result.data[0].weekend]
+          }
+        })
+      },
+      complete: () => {
+        this.loadTimetable();
+      }
+    })
+  },
+  onLoad: function () {
+    wx.cloud.init()
+
+    this.networkStatus();
+    this.userInfo();
+    this.networkStatusChange();
+    this.loadPeriod();
+  },
   store_route: function(e){
     let newDepart = this.data.multiArray[1][this.data.multiIndex[1]]
     let newDestin = this.data.multiArray[2][this.data.multiIndex[2]]
 
-    var myThis = this;
+    let storeRouteThis = this;
 
     wx.showModal({
       title: '提示',
       content: '设置常用路线为：' + newDepart + "/" + newDestin + "?",
       success(res) {
-          if (res.confirm) {
-            wx.getNetworkType({
-              success(myres) {
-                let networkType = myres.subtype || myres.networkType;
-                if (networkType == "none") {
-                  wx.showToast({
-                    title: '无网络连接',
-                    icon: 'loading',
-                    duration: 2000
-                  })
-                } else {
-                  // set route
-                  // wx.cloud.init()
-                  wx.cloud.callFunction({
-                    name: 'store_route',
-                    data: {
-                      departure: newDepart,
-                      destination: newDestin
-                    }
-                  }).then(datares => {
-                    // result
-                  })
-
-                  myThis.setData({
+        if (res.confirm) {
+          wx.getNetworkType({
+            success(myres) {
+              let networkType = myres.subtype || myres.networkType;
+              if (networkType == "none") {
+                wx.showToast({
+                  title: '无网络连接',
+                  icon: 'loading',
+                  duration: 2000
+                })
+              } else {
+                // set route
+                wx.cloud.callFunction({
+                  name: 'store_route',
+                  data: {
                     departure: newDepart,
                     destination: newDestin
-                  })
+                  }
+                }).then(datares => {
+                  // result
+                })
 
-                  wx.showToast({
-                    title: '设置成功',
-                    icon: 'success',
-                    duration: 2000
-                  })
-                }
-            }})
+                storeRouteThis.setData({
+                  departure: newDepart,
+                  destination: newDestin
+                })
 
+                wx.showToast({
+                  title: '设置成功',
+                  icon: 'success',
+                  duration: 2000
+                })
+              }
             }
+          })
         }
-  
       }
-    )
-
-    this.setData(myThis);
+    })
   }
 })

@@ -1,73 +1,92 @@
 {
-	"description": "项目配置文件。",
-	"miniprogramRoot": "src/",
-	"setting": {
-		"urlCheck": true,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true,
-		"nodeModules": true,
-		"autoAudits": false,
-		"uglifyFileName": true,
-		"checkSiteMap": false
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.6.2",
-	"appid": "wx0cf1b691aa8cee83",
-	"projectname": "bus-schedule",
-	"isGameTourist": false,
-	"cloudfunctionRoot": "cloud-functions/",
-	"packOptions": {
-		"ignore": [
-			{
-				"type": "folder",
-				"value": ".idea"
-			},
-			{
-				"type": "folder",
-				"value": "cloud-functions"
-			},
-			{
-				"type": "folder",
-				"value": "data"
-			},
-			{
-				"type": "folder",
-				"value": "pic"
-			},
-			{
-				"type": "file",
-				"value": ".gitignore"
-			},
-			{
-				"type": "file",
-				"value": "LICENSE"
-			},
-			{
-				"type": "file",
-				"value": "README.md"
-			}
-		]
-	},
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": []
-		}
-	}
+  "description": "项目配置文件。",
+  "miniprogramRoot": "src/",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": true,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "uploadWithSourceMap": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "useMultiFrameRuntime": true,
+    "bundle": false,
+    "useApiHook": true,
+    "useApiHostProcess": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.6.2",
+  "appid": "wx0cf1b691aa8cee83",
+  "projectname": "bus-schedule",
+  "isGameTourist": false,
+  "cloudfunctionRoot": "cloud-functions/",
+  "packOptions": {
+    "ignore": [
+      {
+        "type": "folder",
+        "value": ".idea"
+      },
+      {
+        "type": "folder",
+        "value": "cloud-functions"
+      },
+      {
+        "type": "folder",
+        "value": "data"
+      },
+      {
+        "type": "folder",
+        "value": "pic"
+      },
+      {
+        "type": "file",
+        "value": ".gitignore"
+      },
+      {
+        "type": "file",
+        "value": "LICENSE"
+      },
+      {
+        "type": "file",
+        "value": "README.md"
+      }
+    ]
+  },
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "list": []
+    }
+  }
 }

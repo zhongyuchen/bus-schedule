@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    noticeTitle: "关于2019年国庆节校车停运的通知"
+    noticeTitle: "校车运行调整安排"
   },
 
   /**

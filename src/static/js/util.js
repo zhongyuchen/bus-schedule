@@ -1,19 +1,20 @@
 var timeTable = require("timetable.js").data;
 var location = require("location.js").data;
-var pyName = require("pyname.js").data;
+var translate = require("translate.js").data;
 
 const formatTime = date => {
-  // const year = date.getFullYear()
-  // const month = date.getMonth() + 1
-  // const day = date.getDate()
-
   var hour = date.getHours()
   var minute = date.getMinutes()
   // var second = date.getSeconds()
-
-  // return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
   return [hour, minute].map(formatNumber).join(':')
 }
+
+// const formatDate = date => {
+//   const year = date.getFullYear()
+//   const month = date.getMonth() + 1
+//   const day = date.getDate()
+//   return [year, month, day].map(formatNumber).join('')
+// }
 
 const formatNumber = n => {
   n = n.toString()
@@ -122,53 +123,12 @@ function setDepart(multiIndex, multiArray, destination) {
   }
 }
 
-function get_route_data(mythis, departure, destination) {
-  var data = {
-    week: mythis.data.week,
-    departure: departure,
-    destination: destination,
-
-    pickerWeek: mythis.data.pickerWeek,
-    pickerDepart: departure,
-    pickerDestin: destination,
-
-    timeList: [],
-    currentLoca: {},
-
-    departTime: "",
-    destinTime: "",
-
-    multiArray: mythis.data.multiArray,
-    multiIndex: mythis.data.multiIndex
-  };
-
-  data.multiIndex[1] = place2number(data.departure);
-  let setdepartResult = setDepart(data.multiIndex, data.multiArray, data.destination);
-  data.multiIndex = setdepartResult.multiIndex;
-  data.multiArray = setdepartResult.multiArray;
-
-  // update timelist
-  data.timeList = timeTable[pyName[data.pickerWeek]][pyName[data.pickerDepart]][pyName[data.pickerDestin]];
-
-  let result = update_next(data.timeList);
-  data.departTime = result.departTime;
-  data.destinTime = result.destinTime;
-
-  // update currentLoca
-  data.currentLoca = {
-    "left": location[data.departure][data.destination],
-    "right": location[data.destination][data.departure]
-  };
-
-  return data;
-}
-
 module.exports = {
   formatTime: formatTime,
+  // formatDate: formatDate,
   getDayofweek: getDayofweek,
   // compare: compare,
   update_next: update_next,
-  // place2number: place2number,
-  // setDepart: setDepart,
-  get_route_data: get_route_data
+  place2number: place2number,
+  setDepart: setDepart
 }

@@ -6,13 +6,14 @@
   <view class="avatar">
   <view class="userinfo">
     <view class="userinfo-avatar">
-    <open-data type="userAvatarUrl"></open-data>
+      <open-data type="userAvatarUrl"></open-data>
     </view>
     <!-- <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image> -->
     <view class="name-route">
       <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
-      <view class="userinfo-nickname"><open-data type="userNickName"></open-data></view>
-      <text class="route">{{departure}}/{{week}}/{{destination}}</text>
+      <view class="userinfo-nickname"><open-data type="userNickName"></open-data><text class="network-type">{{networkType}}</text></view>
+      <text class="route">{{departure}}/{{destination}}</text>
+      <text class="route">{{week}}/{{weekType}}/{{period.name}}</text>
     </view>
   </view>
   <view class="button-view">

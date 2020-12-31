@@ -2,8 +2,8 @@ import csv
 import json
 import copy
 
-INPUT_CSV = "20201123.csv"
-OUTPUT_JSON = "20201123.json"
+INPUT_CSV = '20201123.csv'
+OUTPUT_JSON = '20201123.json'
 
 
 def timeList(dic, week, fro, to):
@@ -17,34 +17,34 @@ def timeList(dic, week, fro, to):
         if i >= len(left):
             while j < len(right):
                 time.append({
-                    "left": "",
-                    "right": right[j]
+                    'left': '',
+                    'right': right[j]
                 })
                 j = j + 1
             break
         elif j >= len(right):
             while i < len(left):
                 time.append({
-                    "left": left[i],
-                    "right": "",
+                    'left': left[i],
+                    'right': '',
                 })
                 i = i + 1
             break
 
         row = {
-            "left": "",
-            "right": ""
+            'left': '',
+            'right': ''
         }
         if left[i][0:5] == right[j][0:5]:
-            row["left"] = left[i]
-            row["right"] = right[j]
+            row['left'] = left[i]
+            row['right'] = right[j]
             i = i + 1
             j = j + 1
         elif left[i][0:5] < right[j][0:5]:
-            row["left"] = left[i]
+            row['left'] = left[i]
             i = i + 1
         else:
-            row["right"] = right[j]
+            row['right'] = right[j]
             j = j + 1
         time.append(row)
 
@@ -56,28 +56,28 @@ def tojson(filename):
 
     # routes
     routes = {
-        "handan": {
-            "jiangwan": [],
-            "fenglin": [],
-            "zhangjiang": []
+        'handan': {
+            'jiangwan': [],
+            'fenglin': [],
+            'zhangjiang': []
         },
-        "jiangwan": {
-            "handan": [],
+        'jiangwan': {
+            'handan': [],
         },
-        "fenglin": {
-            "handan": [],
-            "zhangjiang": []
+        'fenglin': {
+            'handan': [],
+            'zhangjiang': []
         },
-        "zhangjiang": {
-            "handan": [],
-            "fenglin": []
+        'zhangjiang': {
+            'handan': [],
+            'fenglin': []
         }
     }
 
     # empty dic
     dic = {
-        "weekday": copy.deepcopy(routes),
-        "weekend": copy.deepcopy(routes)
+        'weekday': copy.deepcopy(routes),
+        'weekend': copy.deepcopy(routes)
     }
 
     # another empty dic
@@ -88,7 +88,7 @@ def tojson(filename):
         # parse data
         reader = csv.DictReader(file)
         for row in reader:
-            dic[row["week"]][row["from"]][row["to"]].append(row["time"])
+            dic[row['week']][row['from']][row['to']].append(row['time'])
 
     # transform dic -> data
     for week in data:
@@ -97,13 +97,14 @@ def tojson(filename):
                 data[week][fro][to] = timeList(dic, week, fro, to)
 
     # return data list
+    data['period'] = 'semester'
     return data
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     # timetable
     timeTable = tojson(INPUT_CSV)
 
-    with open(OUTPUT_JSON, "w") as file:
-        # json.dump(timeTable, file, indent=4)
-        json.dump(timeTable, file)
+    with open(OUTPUT_JSON, 'w') as file:
+        json.dump(timeTable, file, indent=4)
+        # json.dump(timeTable, file)
