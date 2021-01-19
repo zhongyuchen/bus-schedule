@@ -2,8 +2,9 @@ import csv
 import json
 import copy
 
-INPUT_CSV = '20201123.csv'
-OUTPUT_JSON = '20201123.json'
+INPUT_CSV = '20210125.csv'
+OUTPUT_JSON = '20210125.json'
+PERIOD = 'winter'
 
 
 def timeList(dic, week, fro, to):
@@ -97,7 +98,7 @@ def tojson(filename):
                 data[week][fro][to] = timeList(dic, week, fro, to)
 
     # return data list
-    data['period'] = 'semester'
+    data['period'] = PERIOD
     return data
 
 

@@ -1,8 +1,8 @@
 # bus-schedule
 
 ![version](https://img.shields.io/badge/version-1.2.0-66c2a5.svg)
-![users](https://img.shields.io/badge/users-12%2C229-fc8d62.svg)
-![likes](https://img.shields.io/badge/likes-2%2C976-red.svg)
+![users](https://img.shields.io/badge/users-12%2C658-fc8d62.svg)
+![likes](https://img.shields.io/badge/likes-3%2C101-red.svg)
 
 Bus schedule of Fudan University hosted on __WeChat Mini Program__ / 复旦大学校车时刻表微信小程序
 
@@ -29,16 +29,29 @@ Bus schedule of Fudan University hosted on __WeChat Mini Program__ / 复旦大�
 npm install --save wx-server-sdk@latest
 ```
 
-## Generate Timetable JSON File
+## Update Timetable
 
-* Modify `INPUT_CSV` and `OUTPUT_JSON` in `files/tojson.py`
-* Modify `period` to signify the period of the timetable
+### generate and upload timetable JSON file to `timetable`
+
+* Modify `INPUT_CSV` and `OUTPUT_JSON` in `data/tojson.py`
+* Modify `PERIOD` to signify the period of the timetable
 * Generate timetable json file:
 ```
-python files/tojson.py
+python data/tojson.py
 ```
 * Upload the `.json` file into database table `timetable` (for online update)
-* Replace the timetable json variable in `data/timetable.js` with the new one, without the `period` key (for static usage)
+* Optional: Replace the timetable json variable in `src/static/js/timetable.js` with the new one, without the `period` key (for static usage)
+
+### add a record in `period`
+
+```
+begin (date): start time of the period
+end (date): end time of the period
+name (str): the name of the period which shows on the app
+period (str): period name for querying the corresponding timetable
+weekday (str): weekday/weekend part of the timetable
+weekend (str): weekday/weekend part of the timetable
+```
 
 ## Reference
 
