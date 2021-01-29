@@ -4,7 +4,7 @@
 ![users](https://img.shields.io/badge/total%20users-12%2C830-fc8d62.svg)
 ![likes](https://img.shields.io/badge/total%20adds-3%2C127-red.svg)
 
-Bus schedule of Fudan University hosted on __WeChat Mini Program__ / 复旦大学校车时刻表微信小程序
+Bus schedule of Fudan University on WeChat Mini Program / 复旦大学校车时刻表微信小程序
 
 ![ercode](pic/ercode.png)
 
