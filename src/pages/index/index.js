@@ -18,14 +18,14 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     // user route
-    departure: "?",
-    departTime: "?",
-    destination: "?",
-    destinTime: "?",
+    departure: "出发",
+    departTime: "无",
+    destination: "到达",
+    destinTime: "无",
     pickerDepart: "邯郸",
     pickerDestin: "江湾",
-    week: "?",
-    weekType: "?",
+    week: "周几",
+    weekType: "是否工作日",
     pickerWeek: "工作日",
     // picker
     multiArray: [['工作日', '非工作日'], ['邯郸', '江湾', '枫林', '张江'], ['江湾', '枫林', '张江']],
@@ -37,7 +37,7 @@ Page({
       "right": location["江湾"]["邯郸"]
     },
     period: {
-      name: "?",
+      name: "时间段",
       period: "semester",
       "工作日": "工作日",
       "非工作日": "非工作日"
