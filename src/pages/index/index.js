@@ -412,5 +412,11 @@ Page({
         }
       }
     })
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '便捷的复旦校车查询工具',
+      path: 'pages/index/index'
+    }
   }
 })
