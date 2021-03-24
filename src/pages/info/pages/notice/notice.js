@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    noticeTitle: "校车运行调整安排",
+    noticeTitle: "无校车运行调整安排",
     noticeContent: [""],
     noticeSigniture: "",
     noticeDate: ""
