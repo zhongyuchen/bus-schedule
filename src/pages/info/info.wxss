@@ -25,8 +25,11 @@
   margin-bottom: 8px;
 }
 
-.info-update{
+.info-text{
+  font-size: 16px;
   color: #6161cc;
+  /* font-weight: 600;
+  margin-bottom: 8px; */
 }
 
 .ground{
@@ -40,13 +43,6 @@
 
 .ground-name{
   font-weight: 600;
-}
-
-.info-text{
-  font-size: 14px;
-  color: red;
-  font-weight: 600;
-  margin-bottom: 8px;
 }
 
 .navigator {
@@ -103,9 +99,3 @@
   margin-right: 5%;
   margin-bottom: 5%;
 }
-
-/* .version{
-    display: flex;
-  flex-direction: column;
-  align-items: center;
-} */

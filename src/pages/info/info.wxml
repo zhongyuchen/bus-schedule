@@ -3,12 +3,7 @@
   <view class="info">
     <image src="../../static/pic/xiaohui.jpg" class="info-logo"></image>
     <text class="info-name">复旦大学校车时刻表</text>
-    <!-- <view class="version"> -->
-      <!-- <button class="weui-btn mini-btn" type="default" size="mini">非官方版</button> -->
-      <!-- <text class="info-version">v1.1.6</text> -->
-    <!-- </view> -->
-    <!-- <text class="info-text">暑期教学活动校车已停运</text>     -->
-    <!-- <text class="info-update">更新于2020年12月31日</text> -->
+    <text class="info-text">便捷的校车时间查询工具</text>
   </view>
 
   <navigator url="pages/usage/usage" class="navigator-top" hover-class="navigator-hover">
