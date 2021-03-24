@@ -269,6 +269,7 @@ Page({
       },
       complete: () => {
         wx.hideToast();
+        wx.stopPullDownRefresh();
       }
     })
   },
@@ -352,8 +353,11 @@ Page({
       destinTime: result.destinTime
     })
   },
+  onPullDownRefresh: function () {
+    this.onLoad(); //重新加载onLoad()
+  },
   onLoad: function () {
-    wx.cloud.init()
+    wx.cloud.init();
     this.getStaticDepartTime();
     this.networkStatus();
     this.userInfo();
