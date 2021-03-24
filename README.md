@@ -1,8 +1,8 @@
 # bus-schedule
 
-![version](https://img.shields.io/badge/version-1.2.0-66c2a5.svg)
-![total users](https://img.shields.io/badge/total%20users-14%2C089-fc8d62.svg)
-![total adds](https://img.shields.io/badge/total%20adds-3%2C394-red.svg)
+![version](https://img.shields.io/badge/version-1.2.1-66c2a5.svg)
+![total users](https://img.shields.io/badge/total%20users-14%2C167-fc8d62.svg)
+![total adds](https://img.shields.io/badge/total%20adds-3%2C410-red.svg)
 
 Bus schedule of Fudan University on WeChat Mini Program / 复旦大学校车时刻表微信小程序
 
