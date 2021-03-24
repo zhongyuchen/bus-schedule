@@ -3,7 +3,7 @@
   <view class="info">
     <image src="../../static/pic/xiaohui.jpg" class="info-logo"></image>
     <text class="info-name">复旦大学校车时刻表</text>
-    <text class="info-text">便捷的校车时间查询工具</text>
+    <text class="info-text">便捷的复旦校车查询工具</text>
   </view>
 
   <navigator url="pages/usage/usage" class="navigator-top" hover-class="navigator-hover">
