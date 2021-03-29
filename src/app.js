@@ -34,9 +34,12 @@ App({
     })
   },
   onPageNotFound(res) {
-    wx.redirectTo({
+    // wx.redirectTo({
+    //   url: 'pages/index/index'
+    // })
+    wx.switchTab({
       url: 'pages/index/index'
-    }) // 如果是 tabbar 页面，请使用 wx.switchTab
+    })
   },
   globalData: {
     userInfo: null
