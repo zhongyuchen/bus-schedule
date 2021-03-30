@@ -65,7 +65,6 @@ weekend (str): weekday/weekend part of the timetable
 
 * [miniprogram-demo](https://github.com/wechat-miniprogram/miniprogram-demo)
 * [picker](https://developers.weixin.qq.com/miniprogram/dev/component/picker.html)
-* [WeUI](https://github.com/Tencent/weui)
 
 ## Links
 
