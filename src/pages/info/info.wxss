@@ -92,11 +92,9 @@
   bottom: 20rpx;
   left: 0;
   right: 0;
-  font-size: 30rpx;
 }
 
 .contact {
-  font-size: 28rpx;
   font-weight: 600;
   color: #6161cc;
   background-color: transparent;
