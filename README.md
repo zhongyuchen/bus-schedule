@@ -3,6 +3,7 @@
 ![version](https://img.shields.io/badge/version-1.2.3-66c2a5.svg)
 ![total users](https://img.shields.io/badge/total%20users-14%2C354-fc8d62.svg)
 ![total adds](https://img.shields.io/badge/total%20adds-3%2C446-red.svg)
+![minimum base library version](https://img.shields.io/badge/minimum%20base%20library%20version-1.1.0-blue.svg)
 
 Bus schedule of Fudan University on WeChat Mini Program / 复旦大学校车时刻表微信小程序
 
@@ -57,7 +58,7 @@ weekend (str): weekday/weekend part of the timetable
 
 ## 客服支持
 
-* `客服小助手`微信小程序：回复用户消息，编辑快捷回复
+* 客服小助手微信小程序：回复用户消息，编辑快捷回复
 * [网页端客服](https://mpkf.weixin.qq.com/)：回复用户消息，设置自动接入、自动问候语，设置自动回复、自动回复内容，编辑快捷回复
 
 ## Reference
