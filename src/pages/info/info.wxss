@@ -94,13 +94,13 @@
   right: 0;
 }
 
-.contact-btn {
+.ground-btn {
   font-weight: 600 !important;
   font-size: 28rpx !important;
   color: #6161cc;
   background-color: transparent;
 }
 
-.contact-btn::after {
+.ground-btn::after {
   border: none;
 }

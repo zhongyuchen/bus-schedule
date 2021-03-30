@@ -21,6 +21,8 @@
   </navigator>
   
   <view class="ground">
-    <button class="contact-btn" open-type="contact" size="mini">联系客服</button>
+    <button class="ground-btn" open-type="contact" size="mini">联系客服</button>
+    <text>|</text>
+    <button class="ground-btn" open-type="feedback" size="mini">反馈与投诉</button>
   </view>
 </view>
