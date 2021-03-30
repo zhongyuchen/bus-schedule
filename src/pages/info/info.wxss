@@ -1,11 +1,10 @@
-/* pages/info/info.wxss */
-@import "../../static/wxss/weui.wxss";
+/**info.wxss**/
 
 .info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 60rpx;
 }
 
 .info-logo {  
@@ -15,21 +14,21 @@
   height: 225rpx;  
   margin: 50rpx;  
   border-radius: 50%;  
-  border: 2px solid #fff;  
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+  border: 4rpx solid #fff;  
+  box-shadow: 6rpx 6rpx 20rpx rgba(0, 0, 0, 0.2);  
 }  
 
 .info-name {
   font-weight: 600;
-  font-size: 20px;
-  margin-bottom: 8px;
+  font-size: 40rpx;
+  margin-bottom: 16rpx;
 }
 
 .info-text{
-  font-size: 16px;
+  font-size: 32rpx;
   color: #6161cc;
   /* font-weight: 600;
-  margin-bottom: 8px; */
+  margin-bottom: 16rpx; */
 }
 
 .navigator {
@@ -68,7 +67,7 @@
 .navigator-img {
   width: 50rpx;
   height: 50rpx;
-  margin-right: 15px;
+  margin-right: 30rpx;
 }
 
 .title {
@@ -77,7 +76,7 @@
   justify-content: center;
   align-items: center;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 40rpx;
   margin: 5%;
 }
 
@@ -90,14 +89,14 @@
 .ground{
   position: fixed;
   text-align: center;
-  bottom: 10px;
+  bottom: 20rpx;
   left: 0;
   right: 0;
-  font-size: 15px;
+  font-size: 30rpx;
 }
 
 .contact {
-  font-size: 14px;
+  font-size: 28rpx;
   font-weight: 600;
   color: #6161cc;
   background-color: transparent;

@@ -11,6 +11,6 @@
 
 page{
     background-color: #FFFFFF;
-    font-size: 16px;
+    font-size: 32rpx;
     font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
 }

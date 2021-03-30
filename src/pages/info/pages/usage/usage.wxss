@@ -1,14 +1,13 @@
-/* pages/info/pages/usage/usage.wxss */
-@import "../../../../static/wxss/weui.wxss";
+/**usage.wxss**/
 @import "../../info.wxss";
 
 .footer{
   display: flex;
   justify-content: center;
-margin-bottom: 10px;
-      position: fixed;
+  margin-bottom: 20rpx;
+  position: fixed;
   text-align: center;
-  bottom: 10px;
+  bottom: 20rpx;
   left: 0;
   right: 0;
 }
@@ -16,10 +15,10 @@ margin-bottom: 10px;
 .footer-img {
   width: 50rpx;
   height: 50rpx;
-  margin-right: 10px;
+  margin-right: 20rpx;
 }
 
 .footer-text {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 32rpx;
 }

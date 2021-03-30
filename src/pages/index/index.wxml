@@ -17,9 +17,9 @@
     </view>
   </view>
   <view class="button-view">
-      <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="weui-btn mini-btn" type="primary" size="mini">授权登陆</button>
-      <button wx:else class="weui-btn mini-btn" type="primary" size="mini" bindtap="store_route">设为常用</button> -->
-      <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="store_route">设为常用</button>
+      <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="mini-btn" type="primary" size="mini">授权登陆</button>
+      <button wx:else class="mini-btn" type="primary" size="mini" bindtap="store_route">设为常用</button> -->
+      <button class="mini-btn" type="primary" size="mini" bindtap="store_route">设为常用</button>
       
       </view>
   </view>
@@ -30,7 +30,7 @@
   <view class="section">
   <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
     <view class="picker">
-      <button class="weui-btn" type="primary" plain="true">
+      <button type="primary" plain="true">
       <view class="tr">
         <view class="td-button">{{pickerDepart}}</view>
         <text class='dialog-close' decode='true'>&lt;</text>

@@ -1,5 +1,4 @@
-/* pages/info/pages/notice/notice.wxss */
-@import "../../../../static/wxss/weui.wxss";
+/**notice.wxss**/
 @import "../../info.wxss";
 
 .signiture {
