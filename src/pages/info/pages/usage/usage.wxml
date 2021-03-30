@@ -12,9 +12,4 @@
     <image src="../../../../static/pic/github.png" class="footer-img"></image>
     <text class="footer-text">zhongyuchen</text>
   </view>
-
-  <!-- <view class="ground">
-    <text class="ground-name">@zhongyuchen</text>
-  </view> -->
-
 </view>

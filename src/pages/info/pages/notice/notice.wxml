@@ -1,6 +1,5 @@
 <!--pages/info/pages/notice/notice.wxml-->
 <view class="page">
-
   <view class="title">
     <rich-text nodes="{{noticeTitle}}"></rich-text>
   </view>
@@ -16,9 +15,4 @@
   <view class="signiture">
     <rich-text nodes="{{noticeDate}}"></rich-text>
   </view>
-
-  <!-- <view class="ground">
-    <text class="ground-name">@zhongyuchen</text>
-  </view> -->
-  
 </view>

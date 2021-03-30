@@ -32,19 +32,6 @@
   margin-bottom: 8px; */
 }
 
-.ground{
-  position: fixed;
-  text-align: center;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  font-size: 15px;
-}
-
-.ground-name{
-  font-weight: 600;
-}
-
 .navigator {
   border-bottom: solid 1rpx #dddddd;
 }
@@ -94,8 +81,28 @@
   margin: 5%;
 }
 
-.usage{
+.usage {
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 5%;
+}
+
+.ground{
+  position: fixed;
+  text-align: center;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  font-size: 15px;
+}
+
+.contact {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6161cc;
+  background-color: transparent;
+}
+
+.contact::after {
+  border: none;
 }
