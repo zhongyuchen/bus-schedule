@@ -49,6 +49,10 @@
   margin-right: 3%;
 }
 
+.store-route-btn {
+  font-size: 28rpx !important;
+}
+
 .picker{
     padding: 26rpx;
     background-color: #FFFFFF;

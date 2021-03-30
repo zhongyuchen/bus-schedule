@@ -4,25 +4,22 @@
 <view class="section">
   <view class="avatar-bg">
   <view class="avatar">
-  <view class="userinfo">
-    <view class="userinfo-avatar">
-      <open-data type="userAvatarUrl"></open-data>
-    </view>
-    <!-- <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image> -->
-    <view class="name-route">
-      <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
-      <view class="userinfo-nickname"><open-data type="userNickName"></open-data><text class="network-type">{{networkType}}</text></view>
-      <text class="route">{{departure}}/{{destination}}</text>
-      <text class="route">{{week}}/{{weekType}}/{{period.name}}</text>
-    </view>
-  </view>
-  <view class="button-view">
-      <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="mini-btn" type="primary" size="mini">授权登陆</button>
-      <button wx:else class="mini-btn" type="primary" size="mini" bindtap="store_route">设为常用</button> -->
-      <button class="mini-btn" type="primary" size="mini" bindtap="store_route">设为常用</button>
-      
+    <view class="userinfo">
+      <view class="userinfo-avatar">
+        <open-data type="userAvatarUrl"></open-data>
       </view>
-  </view>
+      <!-- <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image> -->
+      <view class="name-route">
+        <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+        <view class="userinfo-nickname"><open-data type="userNickName"></open-data><text class="network-type">{{networkType}}</text></view>
+        <text class="route">{{departure}}/{{destination}}</text>
+        <text class="route">{{week}}/{{weekType}}/{{period.name}}</text>
+      </view>
+    </view>
+    <view class="button-view">
+      <button class="store-route-btn" type="primary" size="mini" bindtap="store_route">设为常用</button>
+      </view>
+    </view>
   </view>
 </view>
 
