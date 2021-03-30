@@ -21,6 +21,7 @@ __便捷的复旦校车查询工具__，自动加载常用路线当天的时刻�
 * 选择器：查看其他时间或路线的时刻表
 * 时刻表：包括出发/到达地点、下一班次发车时间、发车时间列表
 * 校车调整通知：了解最新校车运行调整安排
+* 联系客服：直接咨询客服人员
 
 ## Prerequisites
 
@@ -53,6 +54,11 @@ period (str): period name for querying the corresponding timetable
 weekday (str): weekday/weekend part of the timetable
 weekend (str): weekday/weekend part of the timetable
 ```
+
+## 客服支持
+
+* `客服小助手`微信小程序：回复用户消息，编辑快捷回复
+* [网页端客服](https://mpkf.weixin.qq.com/)：回复用户消息，设置自动接入、自动问候语，设置自动回复、自动回复内容，编辑快捷回复
 
 ## Reference
 
