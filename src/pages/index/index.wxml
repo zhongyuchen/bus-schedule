@@ -2,7 +2,6 @@
 <view class="page">
 
 <view class="section">
-  <view class="avatar-bg">
   <view class="avatar">
     <view class="userinfo">
       <view class="userinfo-avatar">
@@ -18,7 +17,6 @@
     </view>
     <view class="button-view">
       <button class="store-route-btn" type="primary" size="mini" bindtap="store_route">设为常用</button>
-      </view>
     </view>
   </view>
 </view>
@@ -28,14 +26,13 @@
   <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
     <view class="picker">
       <button type="primary" plain="true">
-      <view class="tr">
-        <view class="td-button">{{pickerDepart}}</view>
-        <text class='dialog-close' decode='true'>&lt;</text>
-        <view class="td-button">{{pickerWeek}}</view>
-        <text class='dialog-close' decode='true'>&gt;</text>
-        <view class="td-button">{{pickerDestin}}</view>
-      </view>
-
+        <view class="tr">
+          <view class="td-button">{{pickerDepart}}</view>
+          <text class='dialog-close' decode='true'>&lt;</text>
+          <view class="td-button">{{pickerWeek}}</view>
+          <text class='dialog-close' decode='true'>&gt;</text>
+          <view class="td-button">{{pickerDestin}}</view>
+        </view>
       </button>
     </view>
   </picker>
@@ -45,21 +42,21 @@
 <view class="section">
   <view class="table">
     <view class="tr">
-      <view class="th">{{currentLoca["left"]}}</view>
-      <view class="th">{{currentLoca["right"]}}</view>
+      <view class="th" style="border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;">{{currentLoca["left"]}}</view>
+      <view class="th" style="border-top-right-radius: 16rpx;border-bottom-right-radius: 16rpx;">{{currentLoca["right"]}}</view>
     </view>
     <view class="tr">
-      <view class="td">下一班次{{departTime}}</view>
-      <view class="td">下一班次{{destinTime}}</view>
+      <view class="td" style="border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;">下一班次{{departTime}}</view>
+      <view class="td" style="border-top-right-radius: 16rpx;border-bottom-right-radius: 16rpx;">下一班次{{destinTime}}</view>
     </view>
     <view class="tr" wx:key="property" wx:for="{{timeList}}" wx:for-index="idx" wx:for-item="timeRow">
       <block wx:if="{{idx%2}}">
-        <view class="td2">{{timeRow["left"]}}</view>
-        <view class="td2">{{timeRow["right"]}}</view>
+        <view class="td2" style="border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;">{{timeRow["left"]}}</view>
+        <view class="td2" style="border-top-right-radius: 16rpx;border-bottom-right-radius: 16rpx;">{{timeRow["right"]}}</view>
       </block>
       <block wx:else>
-        <view class="td1">{{timeRow["left"]}}</view>
-        <view class="td1">{{timeRow["right"]}}</view>
+        <view class="td1" style="border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;">{{timeRow["left"]}}</view>
+        <view class="td1" style="border-top-right-radius: 16rpx;border-bottom-right-radius: 16rpx;">{{timeRow["right"]}}</view>
       </block>
     </view>
   </view>

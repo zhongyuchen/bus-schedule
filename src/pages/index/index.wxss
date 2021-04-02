@@ -16,7 +16,6 @@
 .name-route {
   display: flex;
   flex-direction: column;
-  margin-left: 10rpx;
   line-height: 40rpx;
 }
 
@@ -25,7 +24,11 @@
   display: block;  
   width: 128rpx;  
   height: 128rpx;  
-  margin: 20rpx;  
+  /* margin: 20rpx; */
+  margin-top: 20rpx;  
+  margin-bottom: 20rpx; 
+  margin-left: 30rpx;  
+  margin-right: 30rpx; 
   border-radius: 50%;  
   border: 4rpx solid #fff;  
   box-shadow: 6rpx 6rpx 20rpx rgba(0, 0, 0, 0.2);  
@@ -53,33 +56,32 @@
 }
 
 .store-route-btn {
-  font-size: 28rpx !important;
+  font-size: 26rpx !important;
 }
 
 .picker{
-  padding: 26rpx;
+  /* padding: 26rpx; */
   background-color: #FFFFFF;
 }
 
 .table{
-  border:2rpx solid #fb9a99;
-  border-radius: 14rpx;
-  width:93%;
+  border:3rpx solid #fb9a99;
   align-content: center;
   vertical-align: center;
-  margin-left: 3%;
-  margin-bottom: 20rpx;
-}
-
-.avatar-bg{
-  background-color: #b3e2cd;
 }
 
 .avatar{
+  border:3rpx solid #b3e2cd;
   display: flex;
-  width:93%;
   justify-content: space-between;
+  background-color: #b3e2cd;
+}
+
+.avatar, .table, .picker {
+  width:93%;
   margin-left: 3%;
+  border-radius: 16rpx;
+  box-shadow: 0rpx 0rpx 8rpx rgba(0, 0, 0, 0.2);  
 }
 
 .tr{
@@ -114,12 +116,14 @@
   font-weight: 600;
 }
 
-.th, .td, .td1, .td2{
+.th, .td, .td1, .td2 {
   font-size: 30rpx;
-}
-
-.th, .td, .td1, .td2{
   padding: 20rpx;
   width: 100%;
   text-align: center;
+}
+
+.section {
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
 }
