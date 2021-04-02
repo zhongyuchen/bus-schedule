@@ -19,6 +19,6 @@
 }
 
 .footer-text {
-  font-weight: 600;
+  font-weight: bold;
   font-size: 32rpx;
 }

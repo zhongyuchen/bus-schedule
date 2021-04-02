@@ -19,7 +19,7 @@
 }  
 
 .info-name {
-  font-weight: 600;
+  font-weight: bold;
   font-size: 40rpx;
   margin-bottom: 16rpx;
 }
@@ -27,7 +27,7 @@
 .info-text{
   font-size: 32rpx;
   color: #6161cc;
-  /* font-weight: 600;
+  /* font-weight: bold;
   margin-bottom: 16rpx; */
 }
 
@@ -75,7 +75,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 40rpx;
   margin: 5%;
 }
@@ -95,7 +95,7 @@
 }
 
 .ground-btn {
-  font-weight: 600 !important;
+  font-weight: bold !important;
   font-size: 28rpx !important;
   color: #6161cc;
   background-color: transparent;

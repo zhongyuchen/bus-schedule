@@ -42,22 +42,16 @@
 <view class="section">
   <view class="table">
     <view class="tr">
-      <view class="th" style="border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;">{{currentLoca["left"]}}</view>
-      <view class="th" style="border-top-right-radius: 16rpx;border-bottom-right-radius: 16rpx;">{{currentLoca["right"]}}</view>
+      <view class="th" style="border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;">{{currentLoca.left}}</view>
+      <view class="th" style="border-top-right-radius: 16rpx;border-bottom-right-radius: 16rpx;">{{currentLoca.right}}</view>
     </view>
     <view class="tr">
-      <view class="td" style="border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;">下一班次 {{departTime}}</view>
-      <view class="td" style="border-top-right-radius: 16rpx;border-bottom-right-radius: 16rpx;">下一班次 {{destinTime}}</view>
+      <view class="td" style="background: #F5F5F5; font-weight: bold; color: red; border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;">下一班次 {{departTime}}</view>
+      <view class="td" style="background: #F5F5F5; font-weight: bold; color: red; border-top-right-radius: 16rpx;border-bottom-right-radius: 16rpx;">下一班次 {{destinTime}}</view>
     </view>
     <view class="tr" wx:key="property" wx:for="{{timeList}}" wx:for-index="idx" wx:for-item="timeRow">
-      <block wx:if="{{idx%2}}">
-        <view class="td2" style="border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;">{{timeRow["left"]}}</view>
-        <view class="td2" style="border-top-right-radius: 16rpx;border-bottom-right-radius: 16rpx;">{{timeRow["right"]}}</view>
-      </block>
-      <block wx:else>
-        <view class="td1" style="border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;">{{timeRow["left"]}}</view>
-        <view class="td1" style="border-top-right-radius: 16rpx;border-bottom-right-radius: 16rpx;">{{timeRow["right"]}}</view>
-      </block>
+      <view class="td" style="background: {{idx%2? '#F5F5F5':'#FFFFFF'}}; font-weight: {{timeRow.left===departTime? 'bold':'normal'}}; color: {{timeRow.left===departTime? 'red':'black'}}; border: {{timeRow.left===departTime? 4:0}}rpx dashed red; border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;">{{timeRow.left}}</view>
+      <view class="td" style="background: {{idx%2? '#F5F5F5':'#FFFFFF'}}; font-weight: {{timeRow.right===destinTime? 'bold':'normal'}}; color: {{timeRow.right===destinTime? 'red':'black'}}; border: {{timeRow.right===destinTime? 4:0}}rpx dashed red; border-top-right-radius: 16rpx;border-bottom-right-radius: 16rpx;">{{timeRow.right}}</view>
     </view>
   </view>
 </view>
