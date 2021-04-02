@@ -46,8 +46,8 @@
       <view class="th" style="border-top-right-radius: 16rpx;border-bottom-right-radius: 16rpx;">{{currentLoca["right"]}}</view>
     </view>
     <view class="tr">
-      <view class="td" style="border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;">下一班次{{departTime}}</view>
-      <view class="td" style="border-top-right-radius: 16rpx;border-bottom-right-radius: 16rpx;">下一班次{{destinTime}}</view>
+      <view class="td" style="border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;">下一班次 {{departTime}}</view>
+      <view class="td" style="border-top-right-radius: 16rpx;border-bottom-right-radius: 16rpx;">下一班次 {{destinTime}}</view>
     </view>
     <view class="tr" wx:key="property" wx:for="{{timeList}}" wx:for-index="idx" wx:for-item="timeRow">
       <block wx:if="{{idx%2}}">
