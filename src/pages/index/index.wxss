@@ -123,7 +123,11 @@
   text-align: center;
 }
 
+.white-filler {
+  background: #fff;
+  height: 26rpx;
+}
+
 .section {
-  margin-top: 20rpx;
-  margin-bottom: 10rpx;
+  margin-top: 26rpx;
 }
