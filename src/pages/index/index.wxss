@@ -89,13 +89,10 @@
 }
 
 .th{
-  font-weight: 600;
   background: #FFFFFF;
-  font-size: 34rpx;
 }
 
 .td{
-  font-weight: 600;
   color: red;
   background: #F5F5F5;
 }
@@ -113,7 +110,11 @@
   text-align: center;
 }
 
-.td, .td1, .td2{
+.th, .td {
+  font-weight: 600;
+}
+
+.th, .td, .td1, .td2{
   font-size: 30rpx;
 }
 
