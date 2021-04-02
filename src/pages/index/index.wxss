@@ -60,7 +60,6 @@
 }
 
 .picker{
-  /* padding: 26rpx; */
   background: #FFFFFF;
   font-size: 30rpx;
   font-weight: bold; 
