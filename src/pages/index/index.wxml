@@ -25,15 +25,13 @@
   <view class="section">
   <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
     <view class="picker">
-      <button type="primary" plain="true">
-        <view class="tr">
-          <view class="td-button">{{pickerDepart}}</view>
-          <text class='dialog-close' decode='true'>&lt;</text>
-          <view class="td-button">{{pickerWeek}}</view>
-          <text class='dialog-close' decode='true'>&gt;</text>
-          <view class="td-button">{{pickerDestin}}</view>
-        </view>
-      </button>
+      <view class="tr">
+        <view class="td-picker">{{pickerDepart}}</view>
+        <text class='dialog-close' decode='true'>&lt;</text>
+        <view class="td-picker">{{pickerWeek}}</view>
+        <text class='dialog-close' decode='true'>&gt;</text>
+        <view class="td-picker">{{pickerDestin}}</view>
+      </view>
     </view>
   </picker>
 </view>
