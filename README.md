@@ -22,12 +22,12 @@ __便捷的复旦校车查询工具__，自动加载常用路线当天的时刻�
 * 选择器：查看其他时间或路线的时刻表
 * 时刻表：包括出发/到达地点、下一班次发车时间、发车时间列表
 * 校车调整通知：了解最新校车运行调整安排
+* 反馈与投诉：功能异常、产品建议、违规举报
 * 联系客服：直接咨询客服人员
 
 ## Prerequisites
 
-* Since `wx-server-sdk` is used for cloud functions, 
-`wx-server-sdk` dependencies have to be installed at __the root of every cloud function__ via the following command:
+* 如果要修改、增加云函数，要在对应云函数的根目录安装`wx-server-sdk`依赖
 ```commandline
 npm install --save wx-server-sdk@latest
 ```
@@ -36,24 +36,23 @@ npm install --save wx-server-sdk@latest
 
 ### generate and upload timetable JSON file to `timetable`
 
-* Modify `INPUT_CSV` and `OUTPUT_JSON` in `data/tojson.py`
-* Modify `PERIOD` to signify the period of the timetable
-* Generate timetable json file:
+* 修改`data/tojson.py`中的`INPUT_CSV` and `OUTPUT_JSON`文件名
+* 修改`PERIOD`为时间段的名字
+* 生成时刻表JSON文件
 ```
 python data/tojson.py
 ```
-* Upload the `.json` file into database table `timetable` (for online update)
-* Optional: Replace the timetable json variable in `src/static/js/timetable.js` with the new one, without the `period` key (for static usage)
+* 把JSON文件上传到数据库中的`timetable`表
 
 ### add a record in `period`
 
 ```
-begin (date): start time of the period
-end (date): end time of the period
-name (str): the name of the period which shows on the app
-period (str): period name for querying the corresponding timetable
-weekday (str): weekday/weekend part of the timetable
-weekend (str): weekday/weekend part of the timetable
+begin (date): 时间段的开始时间
+end (date): 时间段的结束时间
+name (str): 时间段的名字
+period (str): 时间段所对应的时刻表的名字
+weekday (str): 工作日对应时刻表的工作日/非工作日部分
+weekend (str): 非工作日对应时刻表的工作日/非工作日部分
 ```
 
 ## 客服支持
