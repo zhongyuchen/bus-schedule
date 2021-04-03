@@ -85,7 +85,7 @@
   width:93%;
   margin-left: 3%;
   border-radius: 16rpx;
-  box-shadow: 0rpx 0rpx 8rpx rgba(0, 0, 0, 0.2);  
+  box-shadow: 0rpx 0rpx 20rpx rgba(0, 0, 0, 0.2);  
 }
 
 .td-picker {
@@ -111,8 +111,8 @@
   text-align: center;
 }
 
-.white-filler {
-  background: #fff;
+.transparent-filler {
+  background: transparent;
   height: 26rpx;
 }
 
