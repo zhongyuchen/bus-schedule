@@ -51,6 +51,9 @@
 .navigator-btn::after {
   border: none;
 }
+.navigator-hover{
+  background-color: #DEDEDE;
+}
 .navigator-img {
   width: 40rpx;
   height: 40rpx;

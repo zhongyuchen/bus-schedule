@@ -32,7 +32,7 @@
         <view class="navigator-arrow"></view>
       </button>
       <view class="navigator-divide"></view>
-      <button open-type="contact" class="navigator-btn">
+      <button open-type="contact" class="navigator-btn" hover-class="navigator-hover">
         <image src="../../static/pic/user.png" class="navigator-img"></image>
         <view class="navigator-text">联系客服</view>
         <view class="navigator-arrow"></view>
