@@ -1,5 +1,5 @@
 /**usage.wxss**/
-@import "../../info.wxss";
+@import "../../../../app.wxss";
 
 .footer{
   display: flex;

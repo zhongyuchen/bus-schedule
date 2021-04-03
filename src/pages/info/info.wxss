@@ -25,7 +25,7 @@
 }
 
 .info-text{
-  font-size: 30rpx;
+  font-size: 32rpx;
   color: #6161cc;
   margin-bottom: 26rpx;
 }
@@ -89,20 +89,4 @@
   width: 600rpx; /* navigator's width - navigator-divide's margin-left = 750rpx * 94% - 105rpx */
   margin-left: 105rpx; /* navigator's padding + img's width + img's margin-right = 35rpx + 40rpx + 30rpx */
   border: 1rpx solid #eee;
-}
-
-.title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 40rpx;
-  margin: 5%;
-}
-
-.usage {
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 5%;
 }

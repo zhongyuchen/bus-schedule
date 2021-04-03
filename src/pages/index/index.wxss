@@ -16,7 +16,6 @@
 .name-route {
   display: flex;
   flex-direction: column;
-  line-height: 40rpx;
 }
 
 .userinfo-avatar {  
@@ -46,6 +45,7 @@
 
 .route{
   font-size: 24rpx;
+  line-height: 40rpx;
 }
 
 .button-view{

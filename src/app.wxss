@@ -18,8 +18,25 @@
   margin-top: 26rpx;
 }
 
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 40rpx;
+  margin: 5%;
+}
+
+.usage {
+  margin-left: 3%;
+  margin-right: 3%;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+
 page{
     background-color: #FFFFFF;
-    font-size: 32rpx;
+    font-size: 30rpx;
     font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
 }

@@ -1,12 +1,8 @@
 <!--pages/info/pages/usage/usage.wxml-->
 <view class="page">
-  <view class="title">
-    使用说明
-  </view>
+  <view class="title">使用说明</view>
 
-  <view class="usage">
-    <rich-text nodes="{{htmlSnipUsage}}"></rich-text>
-  </view>
+  <view class="usage" style="margin-bottom: 16%;"><rich-text nodes="{{htmlSnipUsage}}"></rich-text></view>
 
   <view class="footer">
     <image src="../../../../static/pic/github.png" class="footer-img"></image>

@@ -1,18 +1,12 @@
 <!--pages/info/pages/notice/notice.wxml-->
 <view class="page">
-  <view class="title">
-    <rich-text nodes="{{noticeTitle}}"></rich-text>
-  </view>
+  <view class="title">{{noticeTitle}}</view>
 
-  <view class="usage">
-    <rich-text nodes="{{noticeContent}}"></rich-text>
-  </view>
+  <view class="usage"><rich-text nodes="{{noticeContent}}"></rich-text></view>
 
-  <view class="signiture">
-    <rich-text nodes="{{noticeSigniture}}"></rich-text>
-  </view>
+  <view class="signiture"><rich-text nodes="{{noticeSigniture}}"></rich-text></view>
 
-  <view class="signiture">
-    <rich-text nodes="{{noticeDate}}"></rich-text>
-  </view>
+  <view class="signiture"><rich-text nodes="{{noticeDate}}"></rich-text></view>
+
+  <view class="transparent-filler"></view>
 </view>

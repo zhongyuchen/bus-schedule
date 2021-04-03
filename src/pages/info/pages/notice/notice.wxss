@@ -1,9 +1,11 @@
 /**notice.wxss**/
-@import "../../info.wxss";
+@import "../../../../app.wxss";
 
 .signiture {
   display: flex;
   flex-direction:row;
   justify-content:flex-end;
-  margin-right: 10%;
+  margin-right: 3%;
+  font-size: 30rpx;
+  line-height: 50rpx;
 }
