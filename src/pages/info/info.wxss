@@ -31,7 +31,7 @@
 }
 
 .tr {
-  width:93%;
+  width: 94%;
   margin-left: 3%;
   border-radius: 16rpx;
   box-shadow: 0rpx 0rpx 20rpx rgba(0, 0, 0, 0.2);  
@@ -46,7 +46,7 @@
 }
 .navigator-btn {
   background: #fff;
-  height: 110rpx; /* max(img's height, text's font-size) + 2 * padding = 40rpx + 2 * 35rpx = 110rpx */
+  height: 110rpx; /* max(img's height, text's font-size) + 2 * padding = 40rpx + 2 * 35rpx */
 }
 .navigator-btn::after {
   border: none;
@@ -81,6 +81,11 @@
   top: 50%;
   margin-top: -8rpx;
   right: 28rpx;
+}
+.navigator-divide {
+  width: 600rpx; /* navigator's width - navigator-divide's margin-left = 750rpx * 94% - 105rpx */
+  margin-left: 105rpx; /* navigator's padding + img's width + img's margin-right = 35rpx + 40rpx + 30rpx */
+  border: 1rpx solid #eee;
 }
 
 .title {

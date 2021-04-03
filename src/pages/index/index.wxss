@@ -83,7 +83,7 @@
 }
 
 .avatar, .table, .picker {
-  width:93%;
+  width: 94%;
   margin-left: 3%;
   border-radius: 16rpx;
   box-shadow: 0rpx 0rpx 20rpx rgba(0, 0, 0, 0.2);  

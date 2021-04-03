@@ -15,6 +15,7 @@
         <view class="navigator-text">使用说明</view>
         <view class="navigator-arrow"></view>
       </navigator>
+      <view class="navigator-divide"></view>
       <navigator url="pages/notice/notice" class="navigator" hover-class="navigator-hover">
         <image src="../../static/pic/view.png" class="navigator-img"></image>
         <view class="navigator-text">{{noticeTitle}}</view>
@@ -30,6 +31,7 @@
         <view class="navigator-text">反馈与投诉</view>
         <view class="navigator-arrow"></view>
       </button>
+      <view class="navigator-divide"></view>
       <button open-type="contact" class="navigator-btn">
         <image src="../../static/pic/user.png" class="navigator-img"></image>
         <view class="navigator-text">联系客服</view>
