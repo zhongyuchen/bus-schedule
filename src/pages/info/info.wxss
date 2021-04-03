@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 60rpx;
+  /* margin-bottom: 60rpx; */
 }
 
 .info-logo {  
@@ -22,12 +22,13 @@
 .info-name {
   font-weight: bold;
   font-size: 40rpx;
-  margin-bottom: 16rpx;
+  margin-bottom: 26rpx;
 }
 
 .info-text{
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #6161cc;
+  margin-bottom: 26rpx;
 }
 
 .tr {
