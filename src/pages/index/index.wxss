@@ -1,4 +1,5 @@
 /**index.wxss**/
+@import "../../app.wxss";
 
 .userinfo {
   display: flex;
@@ -109,13 +110,4 @@
   padding: 20rpx;
   width: 100%;
   text-align: center;
-}
-
-.transparent-filler {
-  background: transparent;
-  height: 26rpx;
-}
-
-.section {
-  margin-top: 26rpx;
 }

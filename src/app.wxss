@@ -9,6 +9,15 @@
   box-sizing: border-box;
 } 
 
+.transparent-filler {
+  background: transparent;
+  height: 26rpx;
+}
+
+.section {
+  margin-top: 26rpx;
+}
+
 page{
     background-color: #FFFFFF;
     font-size: 32rpx;

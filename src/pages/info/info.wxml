@@ -1,28 +1,42 @@
 <!--pages/info/info.wxml-->
 <view class="page">
-  <view class="info">
-    <image src="../../static/pic/xiaohui.jpg" class="info-logo"></image>
-    <text class="info-name">复旦大学校车时刻表</text>
-    <text class="info-text">便捷的复旦校车查询工具</text>
-  </view>
-
-  <navigator url="pages/usage/usage" class="navigator-top" hover-class="navigator-hover">
-    <image src="../../static/pic/form.png" class="navigator-img"></image>
-    <view class="navigator-text">使用说明</view>
-    <view class="navigator-arrow"></view>
-  </navigator>
-
-  <navigator url="pages/notice/notice" class="navigator" hover-class="navigator-hover">
-    <image src="../../static/pic/view.png" class="navigator-img"></image>
-    <view class="navigator-text">
-      <rich-text nodes="{{noticeTitle}}"></rich-text>
+  <view class="section">
+    <view class="info">
+      <image src="../../static/pic/xiaohui.jpg" class="info-logo"></image>
+      <text class="info-name">复旦大学校车时刻表</text>
+      <text class="info-text">便捷的复旦校车查询工具</text>
     </view>
-    <view class="navigator-arrow"></view>
-  </navigator>
-  
-  <view class="ground">
-    <button class="ground-btn" open-type="contact" size="mini">联系客服</button>
-    <text>|</text>
-    <button class="ground-btn" open-type="feedback" size="mini">反馈与投诉</button>
   </view>
+
+  <view class="section">
+    <view class="tr">
+      <navigator url="pages/usage/usage" class="navigator" hover-class="navigator-hover">
+        <image src="../../static/pic/form.png" class="navigator-img"></image>
+        <view class="navigator-text">使用说明</view>
+        <view class="navigator-arrow"></view>
+      </navigator>
+      <navigator url="pages/notice/notice" class="navigator" hover-class="navigator-hover">
+        <image src="../../static/pic/view.png" class="navigator-img"></image>
+        <view class="navigator-text">{{noticeTitle}}</view>
+        <view class="navigator-arrow"></view>
+      </navigator>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="tr">
+      <button open-type="feedback" class="navigator-btn" hover-class="navigator-hover">
+        <image src="../../static/pic/api.png" class="navigator-img"></image>
+        <view class="navigator-text">反馈与投诉</view>
+        <view class="navigator-arrow"></view>
+      </button>
+      <button open-type="contact" class="navigator-btn">
+        <image src="../../static/pic/user.png" class="navigator-img"></image>
+        <view class="navigator-text">联系客服</view>
+        <view class="navigator-arrow"></view>
+      </button>
+    </view>
+  </view>
+
+  <view class="transparent-filler"></view>
 </view>

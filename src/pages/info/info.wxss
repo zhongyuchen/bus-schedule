@@ -1,4 +1,5 @@
 /**info.wxss**/
+@import "../../app.wxss";
 
 .info {
   display: flex;
@@ -12,7 +13,7 @@
   display: block;  
   width: 225rpx;  
   height: 225rpx;  
-  margin: 50rpx;  
+  margin-bottom: 26rpx;  
   border-radius: 50%;  
   border: 4rpx solid #fff;  
   box-shadow: 6rpx 6rpx 20rpx rgba(0, 0, 0, 0.2);  
@@ -27,23 +28,41 @@
 .info-text{
   font-size: 32rpx;
   color: #6161cc;
-  /* font-weight: bold;
-  margin-bottom: 16rpx; */
 }
 
-.navigator {
-  border-bottom: solid 1rpx #dddddd;
+.tr {
+  width:93%;
+  margin-left: 3%;
+  border-radius: 16rpx;
+  box-shadow: 0rpx 0rpx 20rpx rgba(0, 0, 0, 0.2);  
 }
-.navigator-top, .navigator {
-  border-top: solid 1rpx #dddddd;
+.navigator, .navigator-btn {
+  /* border-top: solid 1rpx #dddddd; */
+  border-radius: 16rpx;
   padding: 35rpx;
   position: relative;
   display: flex;
   align-items: center;
 }
-
+.navigator-btn {
+  background: #fff;
+  height: 110rpx; /* max(img's height, text's font-size) + 2 * padding = 40rpx + 2 * 35rpx = 110rpx */
+}
+.navigator-btn::after {
+  border: none;
+}
+.navigator-img {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 30rpx;
+}
 .navigator-text {
   flex: 1;
+  font-size: 30rpx !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .navigator-arrow {
   padding-right: 26rpx;
@@ -64,12 +83,6 @@
   right: 28rpx;
 }
 
-.navigator-img {
-  width: 50rpx;
-  height: 50rpx;
-  margin-right: 30rpx;
-}
-
 .title {
   display: flex;
   flex-direction: column;
@@ -84,23 +97,4 @@
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 5%;
-}
-
-.ground{
-  position: fixed;
-  text-align: center;
-  bottom: 20rpx;
-  left: 0;
-  right: 0;
-}
-
-.ground-btn {
-  font-weight: bold !important;
-  font-size: 28rpx !important;
-  color: #6161cc;
-  background-color: transparent;
-}
-
-.ground-btn::after {
-  border: none;
 }
