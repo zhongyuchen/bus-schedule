@@ -2,9 +2,9 @@ import csv
 import json
 import copy
 
-INPUT_CSV = '20210125.csv'
-OUTPUT_JSON = '20210125.json'
-PERIOD = 'winter'
+INPUT_CSV = '20210412.csv'  # input: timetable csv
+OUTPUT_JSON = '20210412.json'  # output: timetable json
+PERIOD = 'semester'  # choices: 'semester', 'summer', 'winter'
 
 
 def timeList(dic, week, fro, to):
