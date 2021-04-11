@@ -39,6 +39,7 @@ handan,fenglin,08:00,weekend
 fenglin,handan,09:00,weekend
 handan,fenglin,16:30,weekend
 fenglin,handan,17:30,weekend
+handan,jiangwan,07:00,weekday
 jiangwan,handan,07:10,weekday
 jiangwan,handan,07:20,weekday
 handan,jiangwan,07:30,weekday
@@ -80,8 +81,8 @@ jiangwan,handan,13:30,weekday
 handan,jiangwan,14:00,weekday
 jiangwan,handan,14:00,weekday
 handan,jiangwan,14:30,weekday
+jiangwan,handan,14:45,weekday
 handan,jiangwan,15:00,weekday
-jiangwan,handan,15:00,weekday
 jiangwan,handan,15:15,weekday
 handan,jiangwan,15:30,weekday
 jiangwan,handan,15:30,weekday
@@ -138,6 +139,8 @@ jiangwan,handan,10:20,weekend
 handan,jiangwan,10:50,weekend
 jiangwan,handan,11:50,weekend
 handan,jiangwan,12:20,weekend
+jiangwan,handan,14:30,weekend
+handan,jiangwan,15:00,weekend
 jiangwan,handan,16:30,weekend
 handan,jiangwan,17:00,weekend
 jiangwan,handan,17:30,weekend
