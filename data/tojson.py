@@ -2,8 +2,8 @@ import csv
 import json
 import copy
 
-INPUT_CSV = '20210412.csv'  # input: timetable csv
-OUTPUT_JSON = '20210412.json'  # output: timetable json
+INPUT_CSV = '20210426.csv'  # input: timetable csv
+OUTPUT_JSON = '20210426.json'  # output: timetable json
 PERIOD = 'semester'  # choices: 'semester', 'summer', 'winter'
 
 
@@ -64,6 +64,7 @@ def tojson(filename):
         },
         'jiangwan': {
             'handan': [],
+            'zhangjiang': []
         },
         'fenglin': {
             'handan': [],
@@ -71,6 +72,7 @@ def tojson(filename):
         },
         'zhangjiang': {
             'handan': [],
+            'jiangwan': [],
             'fenglin': []
         }
     }

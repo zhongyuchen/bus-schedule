@@ -192,6 +192,8 @@ handan,zhangjiang,08:30,weekend
 zhangjiang,handan,09:20,weekend
 handan,zhangjiang,16:30,weekend
 zhangjiang,handan,17:30,weekend
+zhangjiang,jiangwan,08:45,weekday
+jiangwan,zhangjiang,15:45,weekday
 fenglin,zhangjiang,07:00,weekday
 fenglin,zhangjiang,07:30,weekday
 zhangjiang,fenglin,07:50,weekday
