@@ -98,8 +98,9 @@ function setDepart(multiIndex, multiArray, destination) {
       else { multiIndex[2] = 2; }
       break;
     case 1:
-      multiArray[2] = ['邯郸'];
-      multiIndex[2] = 0;
+      multiArray[2] = ['邯郸', '张江'];
+      if (destination == '邯郸') { multiIndex[2] = 0; }
+      else { multiIndex[2] = 1; }
       break;
     case 2:
       multiArray[2] = ['邯郸', '张江'];
@@ -107,13 +108,10 @@ function setDepart(multiIndex, multiArray, destination) {
       else { multiIndex[2] = 1; }
       break;
     case 3:
-      multiArray[2] = ['邯郸', '枫林'];
+      multiArray[2] = ['邯郸', '江湾', '枫林'];
       if (destination == '邯郸') { multiIndex[2] = 0; }
-      else { multiIndex[2] = 1; }
-      break;
-    case 4:
-      multiArray[2] = ['张江'];
-      multiIndex[2] = 0;
+      else if (destination == '江湾') { multiIndex[2] = 1; }
+      else { multiIndex[2] = 2; }
       break;
   }
   

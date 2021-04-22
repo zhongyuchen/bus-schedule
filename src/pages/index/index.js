@@ -104,16 +104,13 @@ Page({
             data.multiArray[2] = ['江湾', '枫林', '张江'];
             break;
           case 1:
-            data.multiArray[2] = ['邯郸'];
+            data.multiArray[2] = ['邯郸', '张江'];
             break;
           case 2:
             data.multiArray[2] = ['邯郸', '张江'];
             break;
           case 3:
-            data.multiArray[2] = ['邯郸', '枫林'];
-            break;
-          case 4:
-            data.multiArray[2] = ['张江'];
+            data.multiArray[2] = ['邯郸', '江湾', '枫林'];
             break;
         }
         data.multiIndex[2] = 0;
