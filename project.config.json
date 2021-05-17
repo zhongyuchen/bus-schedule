@@ -55,6 +55,10 @@
       },
       {
         "type": "folder",
+        "value": "docs"
+      },
+      {
+        "type": "folder",
         "value": "pic"
       },
       {
