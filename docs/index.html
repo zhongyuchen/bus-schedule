@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+    <link rel="icon" href="static/pic/xiaohui.jpg">
+    <title>复旦大学校车时刻表</title>
+
+    <!-- CSS  -->
+    <link href="static/css/icons.css" rel="stylesheet">
+    <link href="static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+    <!--  Scripts-->
+    <script src="static/js/materialize.min.js"></script>
+    <script src="static/js/init.js"></script>
+    <script src="static/js/d3.min.js"></script>
+    <script src="static/js/buses.js"></script>
+</head>
+<body>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h3 class="header center teal-text">复旦大学校车时刻表</h3>
+      <div class="row center">
+          <h6 class="header col s12 light brown-text">更新于 2019年2月20日</h6>
+      </div>
+      <div class="row center">
+            <a class="btn waves-effect waves-light teal" id="download-button" href="http://www.xyfw.fudan.edu.cn/p2049c1954/list.htm" >
+                官方通知
+            </a>
+      </div>
+      <br>
+    </div>
+  </div>
+
+  <div class="container">
+      <div class="row">
+    <div class="col s12">
+      <ul class="tabs tabs-fixed-width">
+        <li class="tab"><a class="active" href="#weekday">工作日</a></li>
+        <li class="tab"><a href="#weekend">周末</a></li>
+      </ul>
+    </div>
+      <div id="weekday">
+        <ul class="collapsible">
+            <br><br>
+
+            <li>
+              <div class="collapsible-header center">
+                  <h6>邯郸&nbsp&nbsp&nbsp
+                        <i class="material-icons">swap_horiz</i>
+                  江湾</h6>
+              </div>
+              <div class="collapsible-body">
+                  <table class="centered striped">
+                    <thead>
+                      <tr>
+                          <th>理科图书馆东侧</th>
+                          <th>校区宣传栏</th>
+                      </tr>
+                    </thead>
+                    <tbody id="handan-jiangwan-weekday"></tbody>
+                  </table>
+              </div>
+            </li>
+
+            <li>
+              <div class="collapsible-header center">
+                  <h6>邯郸&nbsp&nbsp&nbsp
+                        <i class="material-icons">swap_horiz</i>
+                  枫林</h6>
+              </div>
+              <div class="collapsible-body">
+                  <table class="centered striped">
+                    <thead>
+                      <tr>
+                          <th>老化学楼东侧</th>
+                          <th>西苑（近8号楼）</th>
+                      </tr>
+                    </thead>
+                    <tbody id="handan-fenglin-weekday"></tbody>
+                  </table>
+              </div>
+            </li>
+
+            <li>
+              <div class="collapsible-header center">
+                  <h6>邯郸&nbsp&nbsp&nbsp
+                        <i class="material-icons">swap_horiz</i>
+                  张江</h6>
+              </div>
+              <div class="collapsible-body">
+                  <table class="centered striped">
+                    <thead>
+                      <tr>
+                          <th>理科图书馆东侧</th>
+                          <th>I期图书馆西侧</th>
+                      </tr>
+                    </thead>
+                    <tbody id="handan-zhangjiang-weekday"></tbody>
+                  </table>
+              </div>
+            </li>
+
+            <li>
+              <div class="collapsible-header center">
+                  <h6>枫林&nbsp&nbsp&nbsp
+                        <i class="material-icons">swap_horiz</i>
+                  张江</h6>
+              </div>
+              <div class="collapsible-body">
+                  <table class="centered striped">
+                    <thead>
+                      <tr>
+                          <th>西苑（近8号楼）</th>
+                          <th>II期1号门卫室东侧</th>
+                      </tr>
+                    </thead>
+                    <tbody id="fenglin-zhangjiang-weekday"></tbody>
+                  </table>
+              </div>
+            </li>
+
+            <li>
+              <div class="collapsible-header center">
+                  <h6>上科大&nbsp&nbsp&nbsp
+                        <i class="material-icons">swap_horiz</i>
+                  张江</h6>
+              </div>
+              <div class="collapsible-body">
+                  <table class="centered striped">
+                    <thead>
+                      <tr>
+                          <th>学生宿舍区内</th>
+                          <th>I期图书馆西侧</th>
+                      </tr>
+                    </thead>
+                    <tbody id="stu-zhangjiang-weekday"></tbody>
+                  </table>
+              </div>
+            </li>
+          </ul>
+
+      </div>
+
+      <div id="weekend">
+
+        <ul class="collapsible">
+            <br><br>
+            <li>
+              <div class="collapsible-header center">
+                  <h6>邯郸&nbsp&nbsp&nbsp
+                        <i class="material-icons">swap_horiz</i>
+                  江湾</h6>
+              </div>
+              <div class="collapsible-body">
+                  <table class="centered striped">
+                    <thead>
+                      <tr>
+                          <th>理科图书馆东侧</th>
+                          <th>校区宣传栏</th>
+                      </tr>
+                    </thead>
+                    <tbody id="handan-jiangwan-weekend"></tbody>
+                  </table>
+              </div>
+            </li>
+
+            <li>
+              <div class="collapsible-header center">
+                  <h6>邯郸&nbsp&nbsp&nbsp
+                        <i class="material-icons">swap_horiz</i>
+                  枫林</h6>
+              </div>
+              <div class="collapsible-body">
+                  <table class="centered striped">
+                    <thead>
+                      <tr>
+                          <th>老化学楼东侧</th>
+                          <th>西苑（近8号楼）</th>
+                      </tr>
+                    </thead>
+                    <tbody id="handan-fenglin-weekend"></tbody>
+                  </table>
+              </div>
+            </li>
+
+            <li>
+              <div class="collapsible-header center">
+                  <h6>邯郸&nbsp&nbsp&nbsp
+                        <i class="material-icons">swap_horiz</i>
+                  张江</h6>
+              </div>
+              <div class="collapsible-body">
+                  <table class="centered striped">
+                    <thead>
+                      <tr>
+                          <th>理科图书馆东侧</th>
+                          <th>I期图书馆西侧</th>
+                      </tr>
+                    </thead>
+                    <tbody id="handan-zhangjiang-weekend"></tbody>
+                  </table>
+              </div>
+            </li>
+
+            <li>
+              <div class="collapsible-header center">
+                  <h6>上科大&nbsp&nbsp&nbsp
+                        <i class="material-icons">swap_horiz</i>
+                  张江</h6>
+              </div>
+              <div class="collapsible-body">
+                  <table class="centered striped">
+                    <thead>
+                      <tr>
+                          <th>学生宿舍区内</th>
+                          <th>I期图书馆西侧</th>
+                      </tr>
+                    </thead>
+                    <tbody id="stu-zhangjiang-weekend"></tbody>
+                  </table>
+              </div>
+            </li>
+          </ul>
+
+      </div>
+          </div>
+</div>
+
+  </body>
+</html>
