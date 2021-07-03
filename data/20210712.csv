@@ -46,3 +46,7 @@ fenglin,zhangjiang,11:00,weekday
 zhangjiang,fenglin,12:15,weekday
 fenglin,zhangjiang,15:30,weekday
 zhangjiang,fenglin,16:30,weekday
+jiangwan,zhangjiang,07:25,weekday
+zhangjiang,jiangwan,08:45,weekday
+jiangwan,zhangjiang,15:45,weekday
+zhangjiang,jiangwan,17:00,weekday
