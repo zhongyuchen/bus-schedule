@@ -1,6 +1,6 @@
 # bus-schedule
 
-![version](https://img.shields.io/badge/version-1.2.5-66c2a5.svg)
+![version](https://img.shields.io/badge/version-1.2.6-66c2a5.svg)
 ![total users](https://img.shields.io/badge/total%20users-19%2C976-fc8d62.svg)
 ![total adds](https://img.shields.io/badge/total%20adds-4%2C574-red.svg)
 ![minimum base library version](https://img.shields.io/badge/minimum%20base%20library%20version-2.1.0-blue.svg)
